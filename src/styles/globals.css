@@ -1,0 +1,7 @@
+.signup_err_message{
+    display: none;
+}
+
+.signup_input:invalid[focused="true"] ~ .signup_err_message{
+    display: block;
+}
