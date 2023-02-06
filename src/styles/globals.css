@@ -5,3 +5,7 @@
 .signup_input:invalid[focused="true"] ~ .signup_err_message{
     display: block;
 }
+
+*{
+    font-family: 'Meera Inimai', sans-serif;
+}
