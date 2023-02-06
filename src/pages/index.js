@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import style from '../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -13,9 +14,9 @@ export default function Home() {
       <main>
         <div>
           <div className="container d-flex flex-row justify-content-around">
-            <div className='m-2 p-2 bg-primary'>Hello</div>
-            <div className='m-2 p-2 bg-success'>Hello</div>
-            <div className='m-2 p-2 bg-secondary'>Hello</div>
+            <div className={style.firstdiv}>Hello</div>
+            <div className={style.secondDiv}>Hello</div>
+            <div className={style.firstdiv}>Hello</div>
           </div>
         </div>
       </main>

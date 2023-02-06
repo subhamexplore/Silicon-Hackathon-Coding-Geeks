@@ -1,0 +1,10 @@
+.firstdiv{
+    margin: 2rem;
+    padding: 2rem;
+    background-color : green;
+}
+.secondDiv{
+    margin: 2rem;
+    padding: 2rem;
+    background-color : red;
+}
