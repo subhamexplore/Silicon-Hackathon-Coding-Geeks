@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import styles from "../styles/Signup.module.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 
 const Signup = () => {
   const initialDetails = {
@@ -7,18 +10,54 @@ const Signup = () => {
     email: "",
     password: ""
   }
+  const router = useRouter();
   const [details, setDetails] = useState(initialDetails);
   const [focusedName, setfocusedName] = useState(false);
   const [focusedEmail, setfocusedEmail] = useState(false);
   const [focusedPassword, setfocusedPassword] = useState(false);
+
 
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value })
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(details);
-    setDetails(initialDetails);
+    const response = await fetch('http://localhost:5000/hackathon/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(details),
+    })
+    const fetched = await response.json();
+    if (fetched.status === "ok") {
+      toast.success('Account created successfully', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
+      setTimeout(() => {
+        setDetails(initialDetails);
+        router.push("/login");
+      }, 1000)
+    }
+    else {
+      toast.error(`${fetched.error}`, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
     setfocusedName(false);
     setfocusedEmail(false);
     setfocusedPassword(false);
@@ -28,6 +67,18 @@ const Signup = () => {
   }
   return (
     <div className={`d-flex align-items-center justify-content-center ${styles.boddy}`}>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
       <div className={styles.sin}>
         <div className="d-flex justify-content-center mt-5">
           <div className='fs-1 fw-bold'>SIGN UP</div>
@@ -62,6 +113,5 @@ const Signup = () => {
     </div>
   )
 }
-
 
 export default Signup
