@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const JWT_SECRET = 'hqjshuhhiwbnjnkj()msdnlqjpdkqd;;skljdsqz'
 
 const signup = async (req, res) => {
-  const { name, email, password } = req.body
+  const { username, email, password } = req.body
   const encryptedPassword = await bcrypt.hash(password, 10)
   try {
     const oldUser = await userInfo.find({ email })
@@ -12,7 +12,7 @@ const signup = async (req, res) => {
       return res.status(404).json({ error: 'User Already Exists' })
     }
     const register = await userInfo.create({
-      name,
+      username,
       email,
       password: encryptedPassword,
     })
