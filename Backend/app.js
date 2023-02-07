@@ -7,12 +7,11 @@ mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGO_URI)
 const cors = require('cors')
 app.use(cors())
-const register = require('./routes/register')
-const bcrypt = require('bcryptjs')
+const router = require('./routes/route')
 
 app.use(express.json())
 
-app.use('/hackathon', register)
+app.use('/hackathon', router)
 
 const port = process.env.PORT || 5000
 
