@@ -22,7 +22,7 @@ const Signup = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/hackathon/register', {
+    const response = await fetch('http://localhost:5000/hackathon/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const Signup = () => {
       setTimeout(() => {
         setDetails(initialDetails);
         router.push("/login");
-      }, 1000)
+      }, 1200)
     }
     else {
       toast.error(`${fetched.error}`, {

@@ -1,7 +1,6 @@
 const userInfo = require('../models/userDetail')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const JWT_SECRET = 'hqjshuhhiwbnjnkj()msdnlqjpdkqd;;skljdsqz'
 
 const signup = async (req, res) => {
   const { username, email, password } = req.body
@@ -25,7 +24,6 @@ const signup = async (req, res) => {
       msg: error,
     })
   }
-  // res.status(200).json({ success: true })
 }
 
 const login = async (req, res) => {
@@ -37,7 +35,7 @@ const login = async (req, res) => {
     })
   }
   if (await bcrypt.compare(password, oldUser.password)) {
-    const token = jwt.sign({}, JWT_SECRET)
+    const token = jwt.sign({email : oldUser.email, username : oldUser.username}, process.env.JWT_SECRET)
     if (res.status(201)) {
       return res.json({ status: 'ok', data: token })
     } else {
@@ -47,4 +45,4 @@ const login = async (req, res) => {
   res.json({ status: 'error', error: 'Invalid Password' })
 }
 
-module.exports = { signup, login }
+module.exports = { signup, login}
