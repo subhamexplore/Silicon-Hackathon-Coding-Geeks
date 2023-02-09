@@ -74,7 +74,7 @@ const Login = () => {
       />
       <div className={styles.sin}>
         <div className="d-flex justify-content-center mt-5">
-          <div className='fs-1 fw-bold'>LOGIN</div>
+        <h1 className={styles.title}>LOGIN</h1>
         </div>
         <div className="d-flex justify-content-center mb-3">
           <hr className={styles.hrr} />

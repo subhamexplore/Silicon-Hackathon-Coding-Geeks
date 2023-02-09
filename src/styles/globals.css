@@ -1,11 +1,19 @@
-.signup_err_message{
+.signup_err_message {
     display: none;
 }
 
-.signup_input:invalid[focused="true"] ~ .signup_err_message{
+.signup_input:invalid[focused="true"]~.signup_err_message {
     display: block;
 }
 
-*{
+* {
     font-family: 'Meera Inimai', sans-serif;
+}
+
+body {
+    background-image: url(../../public/pexels-lukas-628241.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6vh;
+    background-attachment: fixed;
 }

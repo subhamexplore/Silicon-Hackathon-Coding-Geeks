@@ -1,0 +1,53 @@
+.flist {
+    list-style: none;
+}
+
+.z {
+    padding-left: 0%;
+    margin-top: 5vh;
+    list-style-type : none;
+}
+
+.zli {
+    margin-top: 1vh;
+    font-size: smaller;
+}
+
+.i{
+    color: black
+}
+
+.footer {
+    background-color: rgba(254, 2, 65, 0.3);;
+    backdrop-filter: blur(3px);
+    box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+    padding: 8vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+.join {
+    padding: 0.3vw 1vw;
+    border-radius: 34vw;
+    font-size: medium;
+    margin-bottom: 15px;
+}
+
+.lastt {
+    font-size: small;
+}
+
+.navlink{
+    cursor : pointer;
+    text-decoration: none;
+    color: black;
+}
+.navlink:hover{
+    color  : rgb(254, 2, 65);
+}
+.join:hover{
+    background-color: rgb(254, 2, 65);
+} 
+.i:hover{
+    color  : rgb(254, 2, 65);
+    cursor: pointer;
+}

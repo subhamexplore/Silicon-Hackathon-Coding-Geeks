@@ -1,5 +1,4 @@
 .boddy{
-    background-image: url(../../public/Cover.png);
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,9 +9,15 @@
     backdrop-filter: blur(5px);
     border-radius: 15px;
     border: 1px solid white;
-    box-shadow: 4px 4px 15px black;
+    box-shadow: 0px 0px 20px 0px black;
     width:500px;
 
+}
+.title{
+    letter-spacing: 5px;
+    font-size: xx-large;
+    font-weight: bold;
+    color:black;
 }
 .inputl{
     font-size: 1em;
@@ -45,7 +50,7 @@
 
 .btnl:hover{
      background-color: blueviolet!important;
-     color: white!important;
+     color:#ffffffab
 }
 
 .hrr{
@@ -74,7 +79,6 @@
 
 @media only screen and (max-width: 600px) {
     .boddy{
-        background-image: url(../../public/Cover.png);
         height: 100vh;
         background-repeat: no-repeat;
         background-size: cover;
@@ -85,9 +89,15 @@
         backdrop-filter: blur(5px);
         border-radius: 15px;
         border: 1px solid white;
-        box-shadow: 4px 4px 15px black;
+        box-shadow: 0px 0px 20px 0px black;
         width:90vw;
     
+    }
+    .title{
+        letter-spacing: 5px;
+        font-size: xx-large;
+        font-weight: bold;
+        color:#ffffffab;
     }
     .inputl{
         font-size: 1em;
@@ -120,7 +130,7 @@
     
     .btnl:hover{
          background-color: blueviolet!important;
-         color: white!important;
+         color: white
     }
     
     .hrr{
