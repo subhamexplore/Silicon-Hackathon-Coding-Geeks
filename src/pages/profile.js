@@ -1,8 +1,14 @@
+import { useRouter } from 'next/router';
 import React from 'react'
 import styles from "../styles/Profile.module.css"
 import {AiFillHeart} from "react-icons/ai"
 
 const profile = () => {
+    const router = useRouter();
+    const logout = () =>{
+      localStorage.removeItem('token');
+      router.push('/');
+    }
     return (
         <>
             <div className={`row  ${styles.boddy} py-5`}>
@@ -24,7 +30,7 @@ const profile = () => {
                             <div className="d-flex align-items-center justify-content-center p-2">N.G.O Details</div>
                         </div>
                         <div className={`${styles.acclside} my-3`}>
-                            <div className="d-flex align-items-center justify-content-center p-2">LOG OUT</div>
+                            <div className="d-flex align-items-center justify-content-center p-2" onClick={logout}>LOG OUT</div>
                         </div>
                     </div>
                 </div>
@@ -114,6 +120,6 @@ const profile = () => {
             </div>
         </>
     )
-}
+ }
 
 export default profile
