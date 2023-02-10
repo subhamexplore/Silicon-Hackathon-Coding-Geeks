@@ -3,8 +3,10 @@ import styles from '../styles/Navbar.module.css'
 import Link from 'next/link'
 import {FaUserAlt} from 'react-icons/fa'
 import {BsFillTelephoneFill} from 'react-icons/bs'
+import {RiLoginBoxFill} from 'react-icons/ri'
 
-const Navbar = () => {
+const Navbar = ({userToken}) => {
+    console.log(userToken);
     const [b, setB] = useState(false)
     const change = () => {
         setB((prev)=> {
@@ -69,7 +71,7 @@ const Navbar = () => {
                             </div>
                         </nav>
                     </div>
-                    <div className={`${styles.profile} `}><Link href="/profile"><FaUserAlt className={`${styles.pro}`}></FaUserAlt></Link>
+                    <div className={`${styles.profile} `}>{userToken.value?<Link href="/profile"><FaUserAlt className={`${styles.pro}`}></FaUserAlt></Link>:<Link href="/login"><RiLoginBoxFill className={`${styles.pro}`}></RiLoginBoxFill></Link>}
                     </div>
                 </div>
             </section>

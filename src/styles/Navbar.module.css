@@ -11,11 +11,16 @@
     border-radius: 50%;
     margin-left: 4rem;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 .pro {
     font-size: 1.5rem;
     color: rgb(81, 0, 21);
+}
+.profile:hover{
+    border-color: rgb(254, 2, 65) !important;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5) !important;
 }
 
 .logo {
