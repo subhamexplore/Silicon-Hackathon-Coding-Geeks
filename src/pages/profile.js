@@ -4,7 +4,6 @@ import styles from "../styles/Profile.module.css"
 import { AiFillHeart } from "react-icons/ai"
 import Accountdetails from '@/components/accountdetails';
 import Ngodetails from '@/components/ngodetails';
-import jwt from 'jwt-decode'
 
 const profile = () => {
     const router = useRouter();
@@ -42,9 +41,6 @@ const profile = () => {
         }
     useEffect(
         ()=>{
-            const token = localStorage.getItem('token');
-            const unknown = jwt(token); 
-            console.log(unknown);
             changeBackground();
 
         },[]
