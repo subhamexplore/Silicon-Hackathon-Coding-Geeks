@@ -4,11 +4,12 @@ import styles from "../styles/Profile.module.css"
 import { AiFillHeart } from "react-icons/ai"
 import Accountdetails from '@/components/accountdetails';
 import Ngodetails from '@/components/ngodetails';
-import jwt from 'jwt-decode'
 
 const profile = () => {
     const router = useRouter();
     const [sidenav, setSidenav] = useState(0);
+    const [hasUserDetails, sethasUserDetails] = useState(false);
+    const [hasNGODetails, sethasNGODetails] = useState(false);
     const handleSidenav = (no) => {
         setSidenav(no);
     }
@@ -40,13 +41,13 @@ const profile = () => {
             NGOachiv : "",
             NGOsector : ""
         }
+    const loggedIn = {
+        username : "Subham Parida",
+        email : "subham@gmail.com"
+    }
     useEffect(
         ()=>{
-            const token = localStorage.getItem('token');
-            const unknown = jwt(token); 
-            console.log(unknown);
             changeBackground();
-
         },[]
     )
     return (
@@ -81,24 +82,17 @@ const profile = () => {
                         <div className="row">
                             <div className={`${styles.data} col-7`}>
                                 <div className={`${styles.title} fs-1`}>
-                                    {userdetails.username}
+                                    {hasUserDetails? userdetails.username : loggedIn.username}
                                 </div>
                                 <div className="fs-4">
-                                    <span>{userdetails.occupation}</span><span className="mx-3">{userdetails.age}</span>
+                                    <span>{hasUserDetails? "" : userdetails.occupation}</span><span className="mx-3">{hasUserDetails? "" :userdetails.age}</span>
                                 </div>
                                 <div className="fs-5">
-                                    <span>{userdetails.about}</span>
+                                    <span>{hasUserDetails? "" : userdetails.about}</span>
                                 </div>
                             </div>
                             <div className={`${styles.ngobox} col-5`}>
-                                {/* <div className={'d-flex justify-content-end m-0 p-0'}>
-                                <div className={`${styles.plusbutton}`}>
-                                    <button type="submit" className={`${styles.plus} h-100 w-100 btn fs-2`}>+</button>
-                                </div>
-                            </div>
-                            <div className={` d-flex justify-content-center align-items-center`}>
-                                <div className=" fs-2"> Add Your N.G.O.</div>
-                            </div> */}
+                                {hasNGODetails ? <>
                                 <div className="d-flex">
                                     <div className={`m-3 ${styles.ngoimg} d-flex justify-content-center align-items-center`}>
                                         <img className={` img-thumbnail card-img-top`} src="/logo.png" alt="Card image cap" />
@@ -107,6 +101,17 @@ const profile = () => {
                                         Foundation of Global Odia Diasporia
                                     </div>
                                 </div>
+                                </>
+                                :
+                                <><div className={'d-flex justify-content-end m-0 p-0'}>
+                                    <div className={`${styles.plusbutton}`}>
+                                        <button type="submit" className={`${styles.plus} h-100 w-100 btn fs-2`}>+</button>
+                                    </div>
+                                </div>
+                                <div className={` d-flex justify-content-center align-items-center`}>
+                                    <div className=" fs-2"> Add Your N.G.O.</div>
+                                </div>
+                            </>}
 
 
                             </div>

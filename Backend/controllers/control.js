@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken')
 
 const signup = async (req, res) => {
   const { username, email, password } = req.body
+  console.log(username);
   const encryptedPassword = await bcrypt.hash(password, 10)
   try {
     const oldUser = await userInfo.find({ email })
@@ -29,11 +30,13 @@ const signup = async (req, res) => {
 const login = async (req, res) => {
   const { email, password } = req.body
   const oldUser = await userInfo.findOne({ email })
+  console.log(oldUser.username);
   if (!oldUser) {
     res.status(404).json({
       msg: 'User Not Found',
     })
   }
+ 
   if (await bcrypt.compare(password, oldUser.password)) {
     const token = jwt.sign({email : oldUser.email, username : oldUser.username}, process.env.JWT_SECRET)
     if (res.status(201)) {
@@ -45,7 +48,14 @@ const login = async (req, res) => {
   res.json({ status: 'error', error: 'Invalid Password' })
 }
 
+const homePage = async (req, res) => {
+    console.log(req.user);
+    res.status(200).json({ msg: `hello,${req.paras.username} , ${req.paras.email} and ${req.paras.iat}`})
+ 
+  // res.send('Hiiii')
+}
 
 
 
-module.exports = { signup, login}
+
+module.exports = { signup, login , homePage}
