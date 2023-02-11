@@ -6,12 +6,11 @@
     background-color: rgba(254, 2, 65, 0.3);
     backdrop-filter: blur(2px);
     box-shadow: 1px 1px 15px black;
-    width: 87%;
-    height: 90vh;
+    width: 80%;
+    height: 80vh;
     position: sticky;
-    top: 0;
+    top: 10vh;
     z-index: 1;
-    margin-right: 8rem;
 }
 
 .acclside {
@@ -22,14 +21,45 @@
     box-shadow: 4px 4px 15px black; */
     width: 100%;
     height: 2.6em;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: aliceblue;
+    cursor: pointer;
+}
+
+
+.btnl{
+    font-size: 1em;
+    background-color: rgba(165, 51, 51, 0) !important;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid white;
+    color: aliceblue;
+    width: 100px;
+    height: 40px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.btnl:hover{
+    background-color: rgb(254, 2, 65)!important;
+    color: white;
+}
+
+.acclside:hover{
+    transform: scale(1.15);
+    color: rgb(254, 2, 65);
+}
+
+.acclside:active{
+    color: rgb(254, 2, 65);
 }
 
 .profilespace {
     height: 20vh;
-    background: white;
-    /* border-left: thick solid rgba(202, 17, 63, 0.986); */
+    background-color: var(--backColor);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 }
 
 .accig {
@@ -49,11 +79,20 @@
     border-radius: 50%;
     margin-top: -8vh;
     margin-left: 5vw;
+    z-index: 1;
 }
 
 .data {
+    margin-top: 10px;
     padding-left: 5vw;
     /* border-left: thick solid rgba(202, 17, 63, 0.986); */
+}
+
+.title{
+    letter-spacing: 5px;
+    font-size: xx-large;
+    font-weight: bold;
+    color:black;
 }
 
 .ngobox {
@@ -93,7 +132,6 @@
 
     animation-name: heartanim;
     animation-duration: 900ms;
-    animation-delay: 2000ms;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
@@ -105,11 +143,10 @@
         transform: scale(5);
         color: pink;
     }
-
     to {
 
         color: rgba(202, 17, 63, 0.986);
-        transform: scale(7.2);
+        transform: scale(6.0);
     }
 }
 

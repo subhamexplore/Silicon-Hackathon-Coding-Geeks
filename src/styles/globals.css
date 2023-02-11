@@ -1,3 +1,7 @@
+:root{
+    --backColor : white;
+}
+
 .signup_err_message {
     display: none;
 }
