@@ -11,7 +11,6 @@ export default function App({ Component, pageProps }) {
   const router =useRouter();
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log(key);
     if(token)
     {
       setUserToken({value : token});
@@ -26,7 +25,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Navbar key={key} userToken={userToken}/>
-      <Component {...pageProps} setKey={setKey} />
+      <Component {...pageProps} setKey={setKey}  />
       <Footer/>
     </>
   )

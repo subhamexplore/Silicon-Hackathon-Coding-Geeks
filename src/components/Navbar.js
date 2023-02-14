@@ -5,8 +5,8 @@ import { FaUserAlt } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { RiLoginBoxFill } from 'react-icons/ri'
 
-const Navbar = ({ userToken }) => {
-    console.log(userToken);
+
+const Navbar = ({userToken}) => {
     const [b, setB] = useState(false)
     const change = () => {
         setB((prev) => {
