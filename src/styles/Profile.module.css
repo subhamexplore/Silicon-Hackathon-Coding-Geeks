@@ -26,6 +26,18 @@
     cursor: pointer;
 }
 
+.profilelink{
+    text-decoration: none;
+    color: inherit;
+}
+
+.profilelink:hover{
+    color:inherit
+}
+
+.profilelink:active{
+    color:inherit
+}
 
 .btnl{
     font-size: 1em;
@@ -54,6 +66,8 @@
 .acclside:active{
     color: rgb(254, 2, 65);
 }
+
+
 
 .profilespace {
     height: 20vh;
@@ -85,7 +99,7 @@
 .data {
     margin-top: 10px;
     padding-left: 5vw;
-    /* border-left: thick solid rgba(202, 17, 63, 0.986); */
+    height: 170px;
 }
 
 .title{
@@ -119,7 +133,7 @@
     backdrop-filter: blur(2px);
     border-radius: 15px;
     box-shadow: 4px 4px 15px black;
-    width: 47%;
+    /* width: 47%; */
     margin-left: 1rem;
     margin-top: 10rem;
 }
@@ -189,8 +203,8 @@
     backdrop-filter: blur(2px);
     border-radius: 15px;
     box-shadow: 4px 4px 15px black;
-    width: 47%;
-    margin-left: 3rem;
+    /* width: 47%; */
+    margin-left: 1rem;
     margin-top: 10rem;
 }
 
@@ -210,4 +224,12 @@
     width:9rem;
     background: white;
     /* padding: 3rem; */
+}
+.addngo{
+    padding-bottom: 60px;
+}
+@media screen and (max-width:991px){
+    .ngobox{
+        margin-left: 1rem;
+    }
 }

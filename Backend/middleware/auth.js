@@ -8,13 +8,11 @@ const authentication = async (req, res , next) => {
     }
   
     const token = authHeader.split(' ')[1]
-    console.log(token)
   
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
-      console.log(decoded)
-      const {iat,email,username}=decoded;
-      req.paras={iat,email,username};
+      const {iat,email,username,hasNGO}=decoded;
+      req.paras={iat,email,username,hasNGO};
     //   console.log(`hiii ${req.user.username}`)
       next();
     } catch (error) {

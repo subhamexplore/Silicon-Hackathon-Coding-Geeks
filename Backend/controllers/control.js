@@ -38,7 +38,7 @@ const login = async (req, res) => {
   }
  
   if (await bcrypt.compare(password, oldUser.password)) {
-    const token = jwt.sign({email : oldUser.email, username : oldUser.username}, process.env.JWT_SECRET)
+    const token = jwt.sign({email : oldUser.email, username : oldUser.username,hasNGO:oldUser.hasNGO}, process.env.JWT_SECRET)
     if (res.status(201)) {
       return res.json({ status: 'ok', data: token })
     } else {
@@ -48,14 +48,30 @@ const login = async (req, res) => {
   res.json({ status: 'error', error: 'Invalid Password' })
 }
 
+const updateLogin=async(req,res)=>{
+    const Email=req.paras.email;
+    const obj = req.paras; 
+    console.log(obj);
+    const updateObj = {...obj,hasNGO:true}
+    console.log(updateObj);
+    try {
+      const uzzer=await userInfo.findOneAndUpdate({email : Email},updateObj,{
+        new:true,
+        runValidator:true,
+      });
+      const token = jwt.sign({email : uzzer.email, username : uzzer.username,hasNGO:uzzer.hasNGO}, process.env.JWT_SECRET)
+      res.status(200).json({uzzer,info:token});
+    } catch (error) {
+      console.log(error)
+    }
+}
+
 const homePage = async (req, res) => {
-    console.log(req.user);
-    res.status(200).json({ msg: `hello,${req.paras.username} , ${req.paras.email} and ${req.paras.iat}`})
- 
-  // res.send('Hiiii')
+    const data = req.paras;
+    res.status(200).json({ data})
 }
 
 
 
 
-module.exports = { signup, login , homePage}
+module.exports = { signup, login , homePage,updateLogin}

@@ -4,7 +4,6 @@ const userDetailSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: [true, 'Title Must be provided'],
-    maxlength: [10, 'Title cant be more than 10 characters'],
   },
   email: {
     type: String,
@@ -52,7 +51,7 @@ const userDetailSchema = new mongoose.Schema({
   },
   NGOregd: {
     type: String,
-    required: [true, 'registration id Must be provided'],
+    // required: [true, 'registration id Must be provided'],
     default: null,
   },
   NGOvision: {
@@ -64,6 +63,22 @@ const userDetailSchema = new mongoose.Schema({
     default: null,
   },
   NGOsector: {
+    type: String,
+    default: null,
+  },
+  NGOcity: {
+    type: String,
+    default: null,
+  },
+  NGOstate: {
+    type: String,
+    default: null,
+  },
+  NGOpin: {
+    type: Number,
+    default: null,
+  },
+  NGOaddress: {
     type: String,
     default: null,
   },
