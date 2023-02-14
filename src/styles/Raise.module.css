@@ -1,0 +1,96 @@
+.per{
+    margin: auto;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+}
+.subm{
+    text-align: center;
+}
+.comment{
+    height: 50vh;
+    width: 35vw;
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0.5);
+}
+.textt{
+    font-size: 18px;
+}
+.form{
+    margin: auto;
+    width: 80vw;
+    padding: 60px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+}
+.labelL{
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0);
+}
+.startbtn{
+    text-align: center;
+}
+.mand{
+    color: red;
+}
+.drop{
+    border: 0;
+    border-bottom: 1px solid black;
+    height: 2rem;
+    width: 20rem;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0);
+}
+.dropp{
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.cau{
+    color: red;
+}
+.grey{
+    background-color: rgba(209, 210, 210, 0.409);
+}
+.file{
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 937.6px){
+    .comment{
+        height: 60vh;
+        width: 300px;
+    }
+    .leftt{
+        text-align: center;
+    }
+    .rightt{
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .file{
+        margin-left: 7rem;
+    }
+}
+@media screen and (max-width: 991.2px){
+    .leftt{
+        text-align: center;
+    }
+    .rightt{
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+@media screen and (max-width: 672.6px){
+    .form{
+        position: relative;
+        left: -25px;
+        width: 450px;
+    }
+}

@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import styles from '../styles/Navbar.module.css'
 import Link from 'next/link'
-import {FaUserAlt} from 'react-icons/fa'
-import {BsFillTelephoneFill} from 'react-icons/bs'
-import {RiLoginBoxFill} from 'react-icons/ri'
+import { FaUserAlt } from 'react-icons/fa'
+import { BsFillTelephoneFill } from 'react-icons/bs'
+import { RiLoginBoxFill } from 'react-icons/ri'
+
 
 const Navbar = ({userToken}) => {
     const [b, setB] = useState(false)
     const change = () => {
-        setB((prev)=> {
+        setB((prev) => {
             return !prev
         })
     }
@@ -32,45 +33,45 @@ const Navbar = ({userToken}) => {
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav mx-auto me-5">
-                                        <li className={`${styles.li} nav-item`}>
-                                            <Link href="/contactus" className="nav-link">Contact Us <BsFillTelephoneFill
-                                                className={`${styles.call}`}></BsFillTelephoneFill></Link>
-                                        </li>
+                                    <li className={`${styles.li} nav-item`}>
+                                        <Link href="/contactus" className="nav-link">Contact Us <BsFillTelephoneFill
+                                            className={`${styles.call}`}></BsFillTelephoneFill></Link>
+                                    </li>
                                 </ul>
                             </div>}
                         </div>
                         <nav className={`${styles.logoo} navbar navbar-expand-lg`}>
                             <div className="container-fluid">
 
-                                <button id="burger" className={b?`${styles.burger} navbar-toggler`:` navbar-toggler`} type="button" data-bs-toggle="collapse"
+                                <button id="burger" className={b ? `${styles.burger} navbar-toggler` : ` navbar-toggler`} type="button" data-bs-toggle="collapse"
                                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                     aria-expanded="false" aria-label="Toggle navigation" onClick={change}>
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className={`collapse navbar-collapse ${styles.navbarSupportedContent}`}>
-                                    { !b && <>
+                                    {!b && <>
                                         <ul className="topnav navbar-nav">
-                                        <li className={`${styles.li} nav-item`}>
-                                            <Link href="/" className={`${styles.li} nav-link`} >Home</Link>
-                                        </li>
-                                        <li className={`${styles.li} nav-item`}>
-                                            <Link href="/donate" className={`${styles.li} nav-link`}>Donate</Link>
-                                        </li>
-                                        <li className={`${styles.li} nav-item`}>
-                                            <Link href="/raise" className={`${styles.li} nav-link`}>Raise</Link>
-                                        </li>
-                                    </ul>
-                                    <ul  className="navbar-nav mx-auto me-5">
-                                        <li className={`${styles.li} nav-item`}>
-                                            <Link className={`${styles.li} nav-link`} href="/contactus">Contact Us <BsFillTelephoneFill
-                                                className={`${styles.call} `}></BsFillTelephoneFill></Link>
-                                        </li>
-                                    </ul></>}
+                                            <li className={`${styles.li} nav-item`}>
+                                                <Link href="/" className={`${styles.li} nav-link`} >Home</Link>
+                                            </li>
+                                            <li className={`${styles.li} nav-item`}>
+                                                <Link href="/donate" className={`${styles.li} nav-link`}>Donate</Link>
+                                            </li>
+                                            <li className={`${styles.li} nav-item`}>
+                                                <Link href="/raise" className={`${styles.li} nav-link`}>Raise</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="navbar-nav mx-auto me-5">
+                                            <li className={`${styles.li} nav-item`}>
+                                                <Link className={`${styles.li} nav-link`} href="/contactus">Contact Us <BsFillTelephoneFill
+                                                    className={`${styles.call} `}></BsFillTelephoneFill></Link>
+                                            </li>
+                                        </ul></>}
                                 </div>
                             </div>
                         </nav>
                     </div>
-                    <div className={`${styles.profile} `}>{userToken.value?<Link href="/profile"><FaUserAlt className={`${styles.pro}`}></FaUserAlt></Link>:<Link href="/login"><RiLoginBoxFill className={`${styles.pro}`}></RiLoginBoxFill></Link>}
+                    <div className={`${styles.profile} `}>{userToken.value ? <Link href="/profile"><FaUserAlt className={`${styles.pro}`}></FaUserAlt></Link> : <Link href="/login"><RiLoginBoxFill className={`${styles.pro}`}></RiLoginBoxFill></Link>}
                     </div>
                 </div>
             </section>
