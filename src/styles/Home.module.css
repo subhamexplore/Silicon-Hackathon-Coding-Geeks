@@ -1,0 +1,233 @@
+
+.pehla{
+    border: 2.5px solid rgb(41, 0, 45);
+    background-color: rgba(254, 2, 65, 0.3);
+    backdrop-filter: blur(3px);
+    box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+    grid-row: 1;
+    grid-column: 1/2;
+    position: relative;
+    z-index: -1;
+}
+.doosra{
+  border: 2.5px solid rgb(41, 0, 45);
+  background-color: rgba(254, 2, 65, 0.3);
+  backdrop-filter: blur(3px);
+  box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+  grid-row: 1;
+  grid-column: 2/3;
+  transform: scale(1.1);
+}
+.tisra{
+  border: 2.5px solid rgb(41, 0, 45);
+  background-color: rgba(254, 2, 65, 0.3);
+  backdrop-filter: blur(3px);
+  box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+  grid-row: 1;
+  grid-column: 3/4;
+  position: relative;
+  z-index: -1;
+}
+.dcaro {
+  height: 28.15vw;
+  width: 70vw;
+  object-fit: contain;
+}
+
+.newc {
+  background-color: #e8e0ca58;
+  backdrop-filter: blur(3px);
+}
+
+.dfircaro {
+  height: 28.15vw;
+  width: 60vw;
+  object-fit: cover;
+}
+
+.dseccaro {
+  height: 28.15vw;
+  width: 60vw;
+  object-fit: cover;
+}
+.cc{
+  height: 28.15vw;
+  width: 60vw;
+  box-shadow: inset -58vw 0 3vw -3vw #e8e0cadb;
+}
+.aa{
+  height: 28.15vw;
+  width: 60vw;
+  box-shadow: inset 58vw 0 3vw -3vw #e8e0cad8;
+}
+
+.news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -13vw;
+  height: 30vw;
+  width: 120vw;
+  backdrop-filter: blur(4px);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 2rem;
+}
+.news button {
+  background-color: rgba(0, 0, 0, 0.256);
+}
+@media screen and (max-width: 984px){
+    .newc {
+        color: black;
+        margin-top: 10rem;
+      }
+    
+      .newsd {
+        margin-left: -1.1rem;
+      }
+}
+
+/* ABOUT US  */
+
+.hr{
+    border: none;
+    height: 2px;
+    background-color: black;
+  }
+  .abouthead{
+    text-align: center;
+  }
+  .work{
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .img{
+    background-image: url(/1797971.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 180px;
+    width: 180px;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  }
+  .img1{
+    background-image: url(/1797971.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 180px;
+    width: 180px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  }
+  .about{
+    padding: 2rem;
+    padding-left: 6.299212598425197vw;
+    padding-right: 18.75vw;
+    width: 63vw;
+    height: 180px;
+    border: 2.3px solid rgb(87, 141, 6);
+    background-color: rgba(153, 205, 50, 0.8);
+    backdrop-filter: blur(1px);
+    box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+    clip-path: polygon(75% 0%, 75% 50%, 75% 100%, 0% 100%, 5% 50%, 0% 0%);
+  }
+  .aboutt{
+    padding: 2rem;
+    padding-right: 6.299212598425197vw;
+    padding-left: 18.75vw;
+    width: 63vw;
+    height: 180px;
+    border: 2.3px solid rgb(87, 141, 6);
+    background-color: rgba(153, 205, 50, 0.4);
+    backdrop-filter: blur(1px);
+    box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+    clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 25% 100%, 25% 50%, 25% 0%);
+  }
+  .dev, .om{
+    display: flex;
+    text-align: end;
+  }
+  .abhi, .paras{
+    display: flex;
+  }
+  .dev0, .om0{
+    display: flex;
+    justify-content: end;
+  }
+  @media screen and (max-width: 970px){
+    .about, .aboutt{
+      height: 250px;
+    }
+    .img, .img1{
+      margin-top: 4rem;
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  /* NGO section */
+
+  .rowOfNgo{
+    display: flex;
+    justify-content: center;
+    grid-gap: 3rem;
+  }
+  .card{
+    margin-top: 2rem;
+    border-radius: 1.5rem;
+    background-color: rgba(82, 10, 10, 0.3);
+    backdrop-filter: blur(3px);
+    box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
+    width: 16rem;
+    height: 335px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .card:hover{
+    transform: scale(1.2);
+  }
+  .card img{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+  }
+  .subham{
+    height: 480px;
+    display: flex;
+    align-items: top;
+    padding-top: 45px;
+  }
+
+  /* WHY US  */
+
+  .WHY{
+    margin: auto;
+  }
+
+  .WHY i{
+    font-size: 50px;
+    position: relative;
+    left: 0;
+  }
+  .whyUs{
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    box-shadow: 15px 15px 7px rgba(40, 39, 39, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .why{
+    margin-left: 2rem;
+  }
+  .h{
+    text-align: center;
+  }
+  .one, .two, .three{
+    transition: all 0.2s;
+  }
+  .one:hover, .two:hover, .three:hover{
+    transform: scale(1.04);
+  }
+  .welcome{
+    text-align: center;
+  }
