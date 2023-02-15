@@ -1,10 +1,10 @@
 const user = require('../models/userProfiledetails')
+const fs = require('fs');
 
 const postUserDetail = async (req, res) => {
-   
-    console.log(req.paras.email);
-
-
+  console.log(req);
+  let profile = (req.file)? req.file.filename : null; 
+  console.log(req.paras.email);
   const {
     username,
     email,
@@ -48,6 +48,7 @@ const postUserDetail = async (req, res) => {
       AccountHolder,
       AccountNumber,
       IFSCcode,
+      profile
     })
     res.json({ status:"ok", info: Uzer })
   } catch (error) {

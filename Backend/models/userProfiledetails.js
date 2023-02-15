@@ -82,6 +82,9 @@ const userDetailSchema = new mongoose.Schema({
     type: String,
     default: null,
   },
+  profile: {
+    type : String
+  }
 })
 
 module.exports = mongoose.model('user', userDetailSchema)

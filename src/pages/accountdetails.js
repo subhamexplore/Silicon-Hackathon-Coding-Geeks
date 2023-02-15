@@ -30,6 +30,7 @@ const Accountdetails = () => {
         NGOstate: "",
         NGOpin: 0,
         NGOaddress: "",
+        profilePic : [],
     }
     const router = useRouter();
     const [userDetails, setUserDetails] = useState();
@@ -42,6 +43,10 @@ const Accountdetails = () => {
 
     const handleChange = (e) => {
         setDetails({ ...details, [e.target.name]: e.target.value })
+    }
+
+    const imageUpload = (e) => {
+            setDetails({...details, profilePic : (e.target.files)[0] })        
     }
 
     const getUserDetails = async () => {
@@ -107,8 +112,36 @@ const Accountdetails = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token')
+        console.log(details.profilePic, " ", details.profilePic.name);
+        const file = details.profilePic;
+        const filename = details.profilePic.name;
+        const formdata = new FormData();
+        formdata.append('username',details.username);
+        formdata.append('email',details.email);
+        formdata.append('address',details.address);
+        formdata.append('occupation',details.occupation);
+        formdata.append('age',details.age);
+        formdata.append('city',details.city);
+        formdata.append('state',details.state);
+        formdata.append('pincode',details.pincode);
+        formdata.append('about',details.about);
+        formdata.append('AccountHolder',details.AccountHolder);
+        formdata.append('AccountNumber',details.AccountNumber);
+        formdata.append('IFSCcode',details.IFSCcode);
+        formdata.append('NGOname',details.NGOname);
+        formdata.append('NGOregd',details.NGOregd);
+        formdata.append('NGOvision',details.NGOvision);
+        formdata.append('NGOachiv',details.NGOachiv);
+        formdata.append('NGOsector',details.NGOsector);
+        formdata.append('NGOcity',details.NGOcity);
+        formdata.append('NGOstate',details.NGOstate);
+        formdata.append('NGOpin',details.NGOpin);
+        formdata.append('NGOaddress',details.NGOaddress);
+        formdata.append('myFile', file , filename)
+        console.log(formdata);
+
         if (!userDetails) {
-            const response = await axios.post('http://localhost:5000/hackathon/user', details , {
+            const response = await axios.post('http://localhost:5000/hackathon/user', formdata , {
                 headers: {
                   'Content-Type': 'application/json',
                   'Authorization' : `Bearer ${token}`
@@ -232,6 +265,10 @@ const Accountdetails = () => {
                                     <div className="col-6">
                                         <label htmlFor="inputEmail" className="form-label fs-4 text-">Email</label>
                                         <input type="email" className={`form-control ${styles2.inputac}`} id="inputEmail" placeholder='Email' name="email" value={details.email} onChange={handleChange} />
+                                    </div>
+                                    <div className="col-6">
+                                        <label className='form-label'>Upload Profile</label>
+                                        <input type="file" className={`form-control ${styles2.inputac}`} name="myFile" autoComplete='off' onChange={imageUpload} />
                                     </div>
                                     <div className="col-12">
                                         <div className="row">
