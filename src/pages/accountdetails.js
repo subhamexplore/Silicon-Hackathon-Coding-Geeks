@@ -30,7 +30,7 @@ const Accountdetails = () => {
         NGOstate: "",
         NGOpin: 0,
         NGOaddress: "",
-        profilePic : [],
+        profilePic : "",
     }
     const router = useRouter();
     const [userDetails, setUserDetails] = useState();
@@ -45,9 +45,6 @@ const Accountdetails = () => {
         setDetails({ ...details, [e.target.name]: e.target.value })
     }
 
-    const imageUpload = (e) => {
-            setDetails({...details, profilePic : (e.target.files)[0] })        
-    }
 
     const getUserDetails = async () => {
         const token = localStorage.getItem('token');
@@ -105,6 +102,10 @@ const Accountdetails = () => {
         setUserDetails(obj1);
     }
 
+    useEffect(()=>{
+        console.log(details)
+    },[details.profilePic])
+
     useEffect(() => {
         getUserDetails();
     }, [])
@@ -137,8 +138,7 @@ const Accountdetails = () => {
         formdata.append('NGOstate',details.NGOstate);
         formdata.append('NGOpin',details.NGOpin);
         formdata.append('NGOaddress',details.NGOaddress);
-        formdata.append('myFile', file , filename)
-        console.log(formdata);
+        formdata.append('myFile', file , filename);
 
         if (!userDetails) {
             const response = await axios.post('http://localhost:5000/hackathon/user', formdata , {
@@ -268,7 +268,9 @@ const Accountdetails = () => {
                                     </div>
                                     <div className="col-6">
                                         <label className='form-label'>Upload Profile</label>
-                                        <input type="file" className={`form-control ${styles2.inputac}`} name="myFile" autoComplete='off' onChange={imageUpload} />
+                                        <input type="file" className={`form-control ${styles2.inputac}`} name="myFile" autoComplete='off' onChange={(e)=>{
+                                            setDetails({...details, profilePic : (e.target.files)[0] })  
+                                        }} />
                                     </div>
                                     <div className="col-12">
                                         <div className="row">

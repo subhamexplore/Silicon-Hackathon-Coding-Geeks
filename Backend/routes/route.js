@@ -7,6 +7,8 @@ const { signup, login, homePage, updateLogin} = require('../controllers/control'
 const {postCards,getCards} =require('../controllers/cardUser')
 const {postUserDetail,getUserDetail,getNGOdetail,postNGOdetail}=require('../controllers/userDetail')
 
+
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'IMAGES/profileimages')
