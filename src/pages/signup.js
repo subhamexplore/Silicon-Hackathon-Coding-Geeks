@@ -3,6 +3,7 @@ import styles from "../styles/Signup.module.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const Signup = () => {
   const initialDetails = {
@@ -22,15 +23,13 @@ const Signup = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/hackathon/signup', {
-      method: 'POST',
+    const response = await axios.post('http://localhost:5000/hackathon/signup', details , {
       headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(details),
+        'Content-Type': 'application/json'
+      }
     })
-    const fetched = await response.json();
-    if (fetched.status === "ok") {
+    console.log(response.data);
+    if (response.data.status === "ok") {
       toast.success('Account created successfully', {
         position: "top-center",
         autoClose: 1000,
@@ -47,7 +46,7 @@ const Signup = () => {
       }, 1200)
     }
     else {
-      toast.error(`${fetched.error}`, {
+      toast.error(`${response.data.msg}`, {
         position: "top-center",
         autoClose: 1000,
         hideProgressBar: true,

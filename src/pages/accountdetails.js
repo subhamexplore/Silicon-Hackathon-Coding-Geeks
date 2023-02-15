@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import axios from 'axios';
 
 const Accountdetails = () => {
     let initialDetails = {
@@ -32,7 +33,6 @@ const Accountdetails = () => {
     }
     const router = useRouter();
     const [userDetails, setUserDetails] = useState();
-    console.log(userDetails)
     const [details, setDetails] = useState(initialDetails);
 
     const logout = () => {
@@ -46,16 +46,13 @@ const Accountdetails = () => {
 
     const getUserDetails = async () => {
         const token = localStorage.getItem('token');
-        const response1 = await fetch('http://localhost:5000/hackathon/user', {
-            method: 'GET',
+        const response = await axios.get('http://localhost:5000/hackathon/user', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(),
+            }
         })
-        const data1 = await response1.json();
-        const obj1 = data1.uzzer;
+        const obj1 = response.data.uzzer;
         // const { AccountHolder,
         //     AccountNumber,
         //     IFSCcode,
@@ -111,17 +108,15 @@ const Accountdetails = () => {
         e.preventDefault();
         const token = localStorage.getItem('token')
         if (!userDetails) {
-            const response = await fetch('http://localhost:5000/hackathon/user', {
-                method: 'POST',
+            const response = await axios.post('http://localhost:5000/hackathon/user', details , {
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(details),
-            })
-            const fetched = await response.json();
+                  'Content-Type': 'application/json',
+                  'Authorization' : `Bearer ${token}`
+                }
+              })
+            const fetched = response.data;
             setDetails(fetched.info);
-            if (response.status === 200) {
+            if (fetched.status === "ok") {
                 toast.success('Account Details are up', {
                     position: "top-center",
                     autoClose: 1000,
@@ -150,17 +145,14 @@ const Accountdetails = () => {
             }
         }
         else {
-            const response = await fetch('http://localhost:5000/hackathon/user', {
-                method: 'PATCH',
+            const response = await axios.patch('http://localhost:5000/hackathon/user', details , {
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(details),
-            })
-            const fetched = await response.json();
-            if (response.status === 200) {
-                console.log(fetched);
+                  'Content-Type': 'application/json',
+                  'Authorization' : `Bearer ${token}`
+                }
+              })
+            const fetched = response.data;
+            if (fetched.status === "ok") {
                 toast.success('Account Details Updated', {
                     position: "top-center",
                     autoClose: 1000,
@@ -173,7 +165,6 @@ const Accountdetails = () => {
                 })
             }
             else {
-                console.log(fetched);
                 toast.error(`Updation Unsuccessful`, {
                     position: "top-center",
                     autoClose: 1000,

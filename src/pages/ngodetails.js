@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import axios from 'axios';
 
 const Ngodetails = () => {
     const router = useRouter();
@@ -34,26 +35,22 @@ const Ngodetails = () => {
         e.preventDefault();
         const token = localStorage.getItem('token')
         if (!hasNGO) {
-            const response = await fetch('http://localhost:5000/hackathon/user', {
-                method: 'PATCH',
+            const response = await axios.patch('http://localhost:5000/hackathon/user', details , {
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(details),
-            })
-            const response2 = await fetch('http://localhost:5000/hackathon/login', {
-                method: 'PATCH',
+                  'Content-Type': 'application/json',
+                  'Authorization' : `Bearer ${token}`
+                }
+              })
+              const response2 = await axios.patch('http://localhost:5000/hackathon/login', details , {
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(details),
-            })
-            const fetched2 = await response2.json();
+                  'Content-Type': 'application/json',
+                  'Authorization' : `Bearer ${token}`
+                }
+              })
+            const fetched2 = response2.data;
             localStorage.removeItem('token');
             localStorage.setItem('token', fetched2.info);
-            if (response.status === 200) {
+            if (response.data.status === "ok") {
                 toast.success('NGO Details added', {
                     position: "top-center",
                     autoClose: 1000,
@@ -82,15 +79,13 @@ const Ngodetails = () => {
             }
         }
         else {
-            const response = await fetch('http://localhost:5000/hackathon/user', {
-                method: 'PATCH',
+            const response = await axios.patch('http://localhost:5000/hackathon/user', details , {
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(details),
-            })
-            if (response.status === 200) {
+                  'Content-Type': 'application/json',
+                  'Authorization' : `Bearer ${token}`
+                }
+              })
+            if (response.data.status === "ok") {
                 toast.success('NGO Details Updated', {
                     position: "top-center",
                     autoClose: 1000,
@@ -119,15 +114,13 @@ const Ngodetails = () => {
 
     const checkNGO = async () => {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/hackathon/home', {
-            method: 'GET',
+        const response = await axios.get('http://localhost:5000/hackathon/home', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(),
+            }
         })
-        const fetched = await response.json();
+        const fetched = response.data;
         setHasNGO(fetched.data.hasNGO);
     }
 

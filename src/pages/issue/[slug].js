@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-const Issue = ({card}) => {
+const Issue = ({ card }) => {
   const router = useRouter();
   const { slug } = router.query;
   console.log(card);
@@ -24,7 +24,7 @@ const Issue = ({card}) => {
     const Difference_In_Time = curr.getTime() - prevobj.getTime();
     const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
     return Math.ceil(days - Difference_In_Days);
-}
+  }
   return (
     <>
       {/* <h1>Om<AiFillAlert className="fs-5"></AiFillAlert></h1> */}
@@ -57,7 +57,7 @@ const Issue = ({card}) => {
           <div className={`${styles.rise}`}>
             <div>
               <div className={`${styles.progress} my-4`}>
-                <div className={`${styles.outer}`} style={{backgroundImage : `conic-gradient(rgba(202, 17, 63, 0.986) 0deg,rgba(202, 17, 63, 0.986) ${Math.floor((card.amountRaised / card.amount) * 100)*3.6}deg, white ${Math.floor((card.amountRaised / card.amount) * 100)*3.6}deg,white 360deg`}}>
+                <div className={`${styles.outer}`} style={{ backgroundImage: `conic-gradient(rgba(202, 17, 63, 0.986) 0deg,rgba(202, 17, 63, 0.986) ${Math.floor((card.amountRaised / card.amount) * 100) * 3.6}deg, white ${Math.floor((card.amountRaised / card.amount) * 100) * 3.6}deg,white 360deg` }}>
                   <div className={`${styles.inner}`}>{Math.floor((card.amountRaised / card.amount) * 100)}%</div>
                 </div>
 
@@ -139,8 +139,8 @@ export async function getServerSideProps(context) {
   const response = await fetch("http://localhost:5000/hackathon/card");
   const data = await response.json();
   const allCards = data.info;
-  const card = allCards.filter((item)=>{
-    return item.slug==context.params.slug;
+  const card = allCards.filter((item) => {
+    return item.slug == context.params.slug;
   });
   return {
     props: { card: card[0] },

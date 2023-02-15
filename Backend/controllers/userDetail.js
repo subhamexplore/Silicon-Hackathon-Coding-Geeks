@@ -49,7 +49,7 @@ const postUserDetail = async (req, res) => {
       AccountNumber,
       IFSCcode,
     })
-    res.status(200).json({ info: Uzer })
+    res.json({ status:"ok", info: Uzer })
   } catch (error) {
     console.log(error)
   }
@@ -60,7 +60,7 @@ const getUserDetail = async(req,res)=>{
     const Email=req.paras.email;   
     try {
         const uzzer=await user.findOne({email : Email});
-        res.status(200).json({uzzer});
+        res.json({status:"ok",uzzer:uzzer});
     } catch (error) {
         console.log(error)
     }
@@ -85,7 +85,7 @@ const postNGOdetail = async (req, res) => {
     if (!uzzer) {
       res.status(404).json({msg: `NO uzzer with ${NGOname} `})
     }
-    res.status(200).json({ uzzer })
+    res.json({ status:"ok",uzzer:uzzer})
   } catch (error) {
     console.log(error)
   }
@@ -96,7 +96,7 @@ const getNGOdetail = async (req, res) => {
   const Email = req.paras.email
   try {
     const uzzer = await user.findOne({ email: Email })
-    res.status(200).json({ uzzer })
+    res.json({ status:"ok",uzzer:uzzer })
   } catch (error) {
     console.log(error)
   }

@@ -60,7 +60,7 @@ const updateLogin=async(req,res)=>{
         runValidator:true,
       });
       const token = jwt.sign({email : uzzer.email, username : uzzer.username,hasNGO:uzzer.hasNGO}, process.env.JWT_SECRET)
-      res.status(200).json({uzzer,info:token});
+      res.json({status:"ok",uzzer:uzzer,info:token});
     } catch (error) {
       console.log(error)
     }
@@ -68,7 +68,7 @@ const updateLogin=async(req,res)=>{
 
 const homePage = async (req, res) => {
     const data = req.paras;
-    res.status(200).json({ data})
+    res.json({ status:"ok",data:data})
 }
 
 

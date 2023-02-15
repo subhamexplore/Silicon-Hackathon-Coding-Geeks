@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const Login = () => {
   const initialDetails = {
@@ -18,17 +19,13 @@ const Login = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/hackathon/login', {
-      method: 'POST',
+    const response = await axios.post('http://localhost:5000/hackathon/login', details , {
       headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(details),
+        'Content-Type': 'application/json'
+      }
     })
-    const fetched = await response.json();
-    if (fetched.status === "ok") {
-      console.log(fetched.data);
-      localStorage.setItem('token', fetched.data);
+    if (response.data.status === "ok") {
+      localStorage.setItem('token', response.data.data);
       toast.success('Logged in successfully', {
         position: "top-center",
         autoClose: 1000,
@@ -45,8 +42,7 @@ const Login = () => {
       }, 1200)
     }
     else {
-      console.log(fetched);
-      toast.error(`${fetched.error}`, {
+      toast.error(`${response.data.error}`, {
         position: "top-center",
         autoClose: 1000,
         hideProgressBar: true,

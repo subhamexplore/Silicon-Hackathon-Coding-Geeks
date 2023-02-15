@@ -1,16 +1,17 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../styles/Profile.module.css"
 import { AiFillHeart } from "react-icons/ai"
 import Link from 'next/link';
+import axios from 'axios';
 
 const profile = () => {
     const router = useRouter();
     const [userDetails, setUserDetails] = useState();
     const [loggedIn, setLoggedIn] = useState({
-        iat:"",
-        email:"",
-        username:""
+        iat: "",
+        email: "",
+        username: ""
     });
     const logout = () => {
         localStorage.removeItem('token');
@@ -20,41 +21,36 @@ const profile = () => {
         const crypto = require('crypto').randomBytes(3).toString('hex');
         document.documentElement.style.setProperty('--backColor', `#${crypto}b0`);
     }
-  
+
     const getDetails = async () => {
         const token = localStorage.getItem('token');
-        const response1 = await fetch('http://localhost:5000/hackathon/user', {
-            method: 'GET',
+        const response = await axios.get('http://localhost:5000/hackathon/user', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(),
+            }
         })
-        const data1 = await response1.json();
 
-        const obj1 = data1.uzzer;
-        setUserDetails(obj1);       
+        const obj1 = response.data.uzzer;
+        setUserDetails(obj1);
     }
-    const getsignupDetails = async()=>{
+    const getsignupDetails = async () => {
         const token = localStorage.getItem('token');
-        const response1 = await fetch('http://localhost:5000/hackathon/home', {
-            method: 'GET',
+        console.log(token);
+        const response = await axios.get('http://localhost:5000/hackathon/home', {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(),
+            }
         })
-        const data2 = await response1.json();
 
-        const obj1 = data2.data;
+        const obj1 = response.data.data;
         setLoggedIn(obj1);
-        
+
     }
-    useEffect(()=>{
+    useEffect(() => {
         getsignupDetails();
-    },[]);
+    }, []);
     useEffect(() => {
         getDetails();
         changeBackground();
@@ -94,11 +90,11 @@ const profile = () => {
                                     {userDetails ? userDetails.username : loggedIn.username}
                                 </div>
                                 <div className="fs-4">
-                                    <span>{userDetails? userDetails.occupation:""}</span>
+                                    <span>{userDetails ? userDetails.occupation : ""}</span>
                                     <span className='mx-3'>{userDetails ? userDetails.age : ""}</span>
                                 </div>
                                 <div className="fs-5">
-                                    <span>{userDetails ? userDetails.about: ""}</span>
+                                    <span>{userDetails ? userDetails.about : ""}</span>
                                 </div>
                             </div>
                             <div className={`${styles.ngobox} col-lg-5 col-md-12 col-12`}>
@@ -108,7 +104,7 @@ const profile = () => {
                                             <img className={` img-thumbnail card-img-top`} src="/logo.png" alt="Card image cap" />
                                         </div>
                                         <div className="fs-3 d-flex justify-content-center align-items-center">
-                                            {userDetails?userDetails.NGOname:""}
+                                            {userDetails ? userDetails.NGOname : ""}
                                         </div>
                                     </div>
                                 </>
@@ -129,43 +125,43 @@ const profile = () => {
                                 <div className={`${styles.cornerheart}`}><AiFillHeart></AiFillHeart></div>
                                 <div className='fs-1 text-black mb-5  d-flex justify-content-center align-items-center'>Your Donations</div>
 
-                                    <div className='d-flex justify-content-center align-items-center row'>
-                                        <div className={`${styles.donatecard} card m-3 mb-5 col-12`} >
-                                            <img className="card-img-top" src="/logo.png" alt="Card image cap" />
-                                            <div className={`${styles.donatecardbody} card-body`}>
-                                                <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-                                                <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
-                                            </div>
-                                        </div>
-                                        <div className={`${styles.donatecard} card m-3 mb-5 col-12`} >
-                                            <img className="card-img-top" src="/logo.png" alt="Card image cap" />
-                                            <div className={`${styles.donatecardbody} card-body`}>
-                                                <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-                                                <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
-                                            </div>
+                                <div className='d-flex justify-content-center align-items-center row'>
+                                    <div className={`${styles.donatecard} card m-3 mb-5 col-12`} >
+                                        <img className="card-img-top" src="/logo.png" alt="Card image cap" />
+                                        <div className={`${styles.donatecardbody} card-body`}>
+                                            <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+                                            <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
                                         </div>
                                     </div>
+                                    <div className={`${styles.donatecard} card m-3 mb-5 col-12`} >
+                                        <img className="card-img-top" src="/logo.png" alt="Card image cap" />
+                                        <div className={`${styles.donatecardbody} card-body`}>
+                                            <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+                                            <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className={`${styles.issuebox} col-12 `}>
-                            <div className={`${styles.cornerheart}`}><AiFillHeart></AiFillHeart></div>
+                                <div className={`${styles.cornerheart}`}><AiFillHeart></AiFillHeart></div>
                                 <div className='fs-1 text-black mb-5  d-flex justify-content-center align-items-center'>Your Raises</div>
-                                    <div className='d-flex justify-content-center align-items-center row'>
-                                        <div className={`${styles.issuecard} card m-3 mb-5 col-12`} >
-                                            <img className="card-img-top" src="/logo.png" alt="Card image cap" />
-                                            <div className={`${styles.issuecardbody} card-body`}>
-                                                <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-                                                <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
-                                            </div>
-                                        </div>
-                                        <div className={`${styles.issuecard} card m-3 mb-5 col-12`} >
-                                            <img className="card-img-top" src="/logo.png" alt="Card image cap" />
-                                            <div className={`${styles.issuecardbody} card-body`}>
-                                                <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-                                                <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
-                                            </div>
+                                <div className='d-flex justify-content-center align-items-center row'>
+                                    <div className={`${styles.issuecard} card m-3 mb-5 col-12`} >
+                                        <img className="card-img-top" src="/logo.png" alt="Card image cap" />
+                                        <div className={`${styles.issuecardbody} card-body`}>
+                                            <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+                                            <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
                                         </div>
                                     </div>
-                                
+                                    <div className={`${styles.issuecard} card m-3 mb-5 col-12`} >
+                                        <img className="card-img-top" src="/logo.png" alt="Card image cap" />
+                                        <div className={`${styles.issuecardbody} card-body`}>
+                                            <div className="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+                                            <div className="fs-4">Amount donated: <span className=''><span>&#8377;</span><span>2,000</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </>
