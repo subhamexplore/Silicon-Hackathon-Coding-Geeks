@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Link from 'next/link'
 import styles from '../styles/Donate.module.css'
 import { GiHealthNormal } from "react-icons/gi"
@@ -10,7 +10,8 @@ import { BsThreeDots } from "react-icons/bs"
 import { AiOutlineSearch } from "react-icons/ai"
 
 const Donate = ({ cards }) => {
-    console.log(cards);
+    const [filter, setFilter] = useState("general");
+    const [c,setC] = useState();
     const dayCalc = (prev, days) => {
         const prevobj = new Date(prev)
         const curr = new Date();
@@ -18,6 +19,15 @@ const Donate = ({ cards }) => {
         const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
         return Math.ceil(days - Difference_In_Days);
     }
+    useEffect(() => {
+      let v = cards.filter((item)=>{
+        return filter=="general"? true : (item.category==filter)
+      })
+      setC(v);
+      console.log(c); 
+      console.log(filter); 
+    }, [filter])
+    
     return (
         <>
             <div className={` d-flex flex-column align-items-center justify-content-center container text-center mt-5 p-0 `}>
@@ -25,7 +35,7 @@ const Donate = ({ cards }) => {
                 <div className={`row ${styles.boxcat} p-1 `}>
                     <div className="col-4 col-lg-2">
                         <div className={` d-flex justify-content-center`}>
-                            <div className={`${styles.circlecat} d-flex justify-content-center`}>
+                            <div className={`${styles.circlecat} d-flex justify-content-center`} onClick={()=>{setFilter("health")}}>
                                 <div className={`${styles.caticon}`}><GiHealthNormal></GiHealthNormal></div>
                             </div>
                         </div>
@@ -33,7 +43,7 @@ const Donate = ({ cards }) => {
                     </div>
                     <div className="col-4 col-lg-2">
                         <div className="d-flex justify-content-center">
-                            <div className={`${styles.circlecat} d-flex justify-content-center`}>
+                            <div className={`${styles.circlecat} d-flex justify-content-center`} onClick={()=>{setFilter("education")}}>
                                 <div className={`${styles.caticon}`}><ImBooks></ImBooks></div>
                             </div>
                         </div>
@@ -42,7 +52,7 @@ const Donate = ({ cards }) => {
                     <div className="col-4 col-lg-2 ">
                         <div className="d-flex justify-content-center">
                             <div className="d-flex justify-content-center">
-                                <div className={`${styles.circlecat} d-flex justify-content-center`}>
+                                <div className={`${styles.circlecat} d-flex justify-content-center`} onClick={()=>{setFilter("environment")}}>
                                     <div className={`${styles.caticon}`}><FaEnvira></FaEnvira></div>
                                 </div>
                             </div>
@@ -52,7 +62,7 @@ const Donate = ({ cards }) => {
                     <div className="col-4 col-lg-2">
                         <div className="d-flex justify-content-center">
                             <div className="d-flex justify-content-center">
-                                <div className={`${styles.circlecat} d-flex justify-content-center`}>
+                                <div className={`${styles.circlecat} d-flex justify-content-center`} onClick={()=>{setFilter("wildlife")}}>
                                     <div className={`${styles.caticon}`}><FaDog></FaDog></div>
                                 </div>
                             </div>
@@ -62,7 +72,7 @@ const Donate = ({ cards }) => {
                     <div className="col-4 col-lg-2">
                         <div className="d-flex justify-content-center">
                             <div className="d-flex justify-content-center">
-                                <div className={`${styles.circlecat} d-flex justify-content-center`}>
+                                <div className={`${styles.circlecat} d-flex justify-content-center`} onClick={()=>{setFilter("community")}}>
                                     <div className={`${styles.caticon}`}><CgCommunity></CgCommunity></div>
                                 </div>
                             </div>
@@ -72,12 +82,12 @@ const Donate = ({ cards }) => {
                     <div className="col-4 col-lg-2">
                         <div className="d-flex justify-content-center">
                             <div className="d-flex justify-content-center">
-                                <div className={`${styles.circlecat} d-flex justify-content-center`}>
+                                <div className={`${styles.circlecat} d-flex justify-content-center`} onClick={()=>{setFilter("general")}}>
                                     <div className={`${styles.caticon}`}>< BsThreeDots></ BsThreeDots></div>
                                 </div>
                             </div>
                         </div>
-                        <div className={` d-flex justify-content-center`}>Others</div>
+                        <div className={` d-flex justify-content-center`}>General</div>
 
                     </div>
                 </div>
@@ -95,7 +105,7 @@ const Donate = ({ cards }) => {
             <div className="container text-center px-0">
                 <div className="row">
                     {
-                        cards.map((item) => {
+                        c?.map((item) => {
                             return (
                                 <div className="col col-sm-12 col-md-6 col-lg-4" key={item.slug}>
                                     <div className={`${styles.cent}`}>
@@ -142,7 +152,7 @@ export async function getServerSideProps(context) {
     const data = await response.json();
     const allCards = data.info;
     return {
-        props: { cards: allCards }, // will be passed to the page component as props
+        props: { cards: allCards }, 
     }
 }
 

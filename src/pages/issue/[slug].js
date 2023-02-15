@@ -7,14 +7,24 @@ import { RiFacebookFill } from "react-icons/ri"
 import { BiDonateHeart } from "react-icons/bi"
 import { AiFillHeart } from "react-icons/ai"
 import { HiDocumentText } from "react-icons/hi"
+import Link from 'next/link'
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-const Issue = () => {
+const Issue = ({card}) => {
   const router = useRouter();
   const { slug } = router.query;
+  console.log(card);
+
+  const dayCalc = (prev, days) => {
+    const prevobj = new Date(prev)
+    const curr = new Date();
+    const Difference_In_Time = curr.getTime() - prevobj.getTime();
+    const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    return Math.ceil(days - Difference_In_Days);
+}
   return (
     <>
       {/* <h1>Om<AiFillAlert className="fs-5"></AiFillAlert></h1> */}
@@ -25,21 +35,21 @@ const Issue = () => {
             <Carousel.Item interval={1000}>
               <img
                 className={`${styles.pic} d-block w-100`}
-                src="/crr.png"
+                src={card.img}
                 alt="First slide"
               />
             </Carousel.Item>
             <Carousel.Item interval={1000}>
               <img
                 className={`${styles.pic} d-block w-100`}
-                src="/crr.png"
+                src={card.img}
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item interval={1000}>
               <img
                 className={`${styles.pic} d-block w-100`}
-                src="/crr.png"
+                src={card.img}
                 alt="Third slide"
               />
             </Carousel.Item>
@@ -47,17 +57,17 @@ const Issue = () => {
           <div className={`${styles.rise}`}>
             <div>
               <div className={`${styles.progress} my-4`}>
-                <div className={`${styles.outer}`}>
-                  <div className={`${styles.inner}`}>21%</div>
+                <div className={`${styles.outer}`} style={{backgroundImage : `conic-gradient(rgba(202, 17, 63, 0.986) 0deg,rgba(202, 17, 63, 0.986) ${Math.floor((card.amountRaised / card.amount) * 100)*3.6}deg, white ${Math.floor((card.amountRaised / card.amount) * 100)*3.6}deg,white 360deg`}}>
+                  <div className={`${styles.inner}`}>{Math.floor((card.amountRaised / card.amount) * 100)}%</div>
                 </div>
 
                 <div className={`${styles.raised} my-3 mx-2`}>
                   <h5>Raised</h5>
-                  <span><span><span className={`${styles.value}`}>Rs.3,60,09,880</span> of Rs.17,50,00,000</span></span>
+                  <span><span><span className={`${styles.value}`}>Rs.{card.amountRaised}</span> of Rs.{card.amount}</span></span>
                 </div>
               </div>
-              <Button className="ms-5" variant="success"><SiWhatsapp></SiWhatsapp> Success</Button>{' '}
-              <Button className="ms-3" variant="primary"><RiFacebookFill></RiFacebookFill> Primary</Button>{' '}
+              <Button className="ms-5" variant="success"><SiWhatsapp></SiWhatsapp> <Link className={styles.linkcard} href="https://web.whatsapp.com/">Share</Link></Button>{' '}
+              <Button className="ms-3" variant="primary"><RiFacebookFill></RiFacebookFill><Link className={styles.linkcard} href="https://www.facebook.com/"> Share</Link></Button>{' '}
             </div>
           </div>
         </div>
@@ -66,20 +76,10 @@ const Issue = () => {
           <div className="row">
             <div className={`${styles.desc} col-lg-8`}>
               <div className={`${styles.h} mt-5`}>
-                <h3>Help My Son Recover From SMA Type 2</h3>
+                <h3>{card.title}</h3>
                 <Button className='mt-2 mb-3' variant="danger"><HiDocumentText className='fs-4 mb-1'></HiDocumentText>View Documents</Button>{' '}
               </div>
-              <p>Help save Baby Nirvaan
-
-                I am writing to you with folded hands, asking for your help in supporting our special little boy Nirvaan, born on October 2021. Nirvaan was born with a birth defect - Congenital scoliosis which is a spinal deformity in which babies are born with a sideways curvature of the spine. While this news broke our hearts but our regular interactions with doctors and experts gave us confidence that we can get this treated and ensure Nirvaan leads a normal life through surgical treatment by implanting growing rods and spinal fusion.
-                Unfortunately, during one of the tests - Electromyography (EMG) which is a diagnostic procedure to assess the health of muscles and the nerve cells that control them (motor neurons), we realized there is some serious issue with Nirvaan’s lower body. At 14th months, Nirvaan got diagnosed with a rare genetic disorder - spinal muscular atrophy (SMA) type 2. Our world was shattered and turned upside down, as this is a life-alternating disorder that takes away the ability to walk, eat or breathe and significantly shortens the lifespan</p>
-              <p>
-                This condition is progressive, meaning that it will continue to get worse over time. But there is a treatment for this condition, a new drug called Zolgensma by Novartis which has shown great promise in helping children with SMA. The only problem is that it is also the most expensive drug in the world, costing a staggering $2.1 million dollars, or nearly ₹17.3 crores rupees.
-
-                For Novartis to approve Zolgensma therapy, a child must not reach 2 years – as this would negatively affect the effectiveness and the safety of the treatment. Nirvaan is currently 15 months old (as of January 2023), thus we have a fight against the clock. This is the reason we have set up this page. We do not have the means to make up anywhere near the required amount ($2.1 million dollars/17.3 crores rupees) in this time frame and need your help.
-
-                We are running out of time and we are urging our community, family, friends and everyone willing to help donate or simply share our page as every effort and donation makes a difference and will get our son Nirvaan that much closer to this life-saving medication we so desperately need. To help get the word out, please share this Milaap page on Instagram, Twitter, Facebook and get your friends and family to do the same! My family and I will forever be grateful for it.
-              </p>
+              <p>{card.description}</p>
             </div>
 
 
@@ -90,11 +90,11 @@ const Issue = () => {
                     <Card.Title><BiDonateHeart className={`${styles.donLogo} mb-1`}></BiDonateHeart> Donate</Card.Title>
                     <Card.Link className='ms-auto fs-6' href="#">998 Supporters</Card.Link>
                   </div><br />
-                  <Card.Title className='fs-2'>₹ 3,60,09,880</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted"><span> raised of </span><span className={`${styles.raised} fs-5`}>17,50,00,000</span></Card.Subtitle>
-                  <ProgressBar striped variant="success" label={`${21}%`} animated now={21} />
+                  <Card.Title className='fs-2'>₹ {card.amountRaised}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted"><span> raised of </span><span className={`${styles.raised} fs-5`}>₹ {card.amount}</span></Card.Subtitle>
+                  <ProgressBar striped variant="success" label={`${Math.floor((card.amountRaised / card.amount) * 100)}%`} animated now={Math.floor((card.amountRaised / card.amount) * 100)} />
                   <div className={`${styles.days} mt-2`}>
-                    <Card.Title className='fs-4 ms-auto'>18</Card.Title>
+                    <Card.Title className='fs-4 ms-auto'>{dayCalc(card.createdAt, card.day)}</Card.Title>
                     <Card.Subtitle className="text-muted mt-2 mx-1">days left</Card.Subtitle>
                   </div>
                   <div className={`${styles.dnow}`}>
@@ -132,6 +132,19 @@ const Issue = () => {
       <br /><br />
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  console.log(context.params.slug);
+  const response = await fetch("http://localhost:5000/hackathon/card");
+  const data = await response.json();
+  const allCards = data.info;
+  const card = allCards.filter((item)=>{
+    return item.slug==context.params.slug;
+  });
+  return {
+    props: { card: card[0] },
+  }
 }
 
 export default Issue;

@@ -19,7 +19,7 @@ const Navbar = ({userToken}) => {
                 <div className={styles.header}>
                     <div className={styles.roww}>
                         <div className={`${styles.logo} mt-3`}>
-                            <Link className="navbar-brand" href="/"><img className={`${styles.log}`} src="./logo.png" alt="logo" /></Link>
+                            <Link className="navbar-brand" href="/"><img className={`${styles.log}`} src="/logo.png" alt="logo" /></Link>
                             {b && <div className={`navbarSupportedContent mr-1`}>
                                 <ul className="topnav navbar-nav">
                                     <li className={`${styles.li} nav-item`}>

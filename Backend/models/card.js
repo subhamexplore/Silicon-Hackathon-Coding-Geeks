@@ -4,12 +4,10 @@ const card = new mongoose.Schema({
     type: String,
     unique: true,
     required: [true, 'Title Must be provided'],
-    maxlength: [10, 'Title cant be more than 10 characters'],
   },
   description: {
     type: String,
     required: [true, 'description Must be provided'],
-    maxlength: [50, 'description cant be more than 50 characters'],
   },
   amount: {
     type: Number,

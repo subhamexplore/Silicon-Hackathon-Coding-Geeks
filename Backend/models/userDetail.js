@@ -8,7 +8,7 @@ const UserDetailSchema = new mongoose.Schema(
     hasNGO:{
       type:Boolean,
       default:false,
-    }
+    },
   },
   {
     collection: 'userInfo',

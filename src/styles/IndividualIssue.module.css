@@ -19,7 +19,6 @@
     width: 90px;
     border-radius: 50%;
     border: 1px solid black;
-    background-image: conic-gradient(rgb(15, 193, 15) 75.6deg, rgba(255, 255, 255, 0.3) 24.4deg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,6 +34,15 @@
     align-items: center;
     justify-content: center;
 }
+
+.linkcard{
+    text-decoration: none;
+    color: initial;
+}
+.linkcard:hover{
+    color: initial;
+}
+
 .h{
     text-align: center;
 }
