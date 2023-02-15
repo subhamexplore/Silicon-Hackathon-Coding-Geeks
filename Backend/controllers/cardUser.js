@@ -4,9 +4,9 @@ const card = require('../models/card')
 // const fs = require('fs')
 
 const postCards = async (req, res) => {
-  const { title, description, amount, day, file } = req.body
+  const { title, description, amount, day, img, slug , user, amountRaised, category} = req.body
   try {
-    const oldTitle = await card.findOne({ title })
+    const oldTitle = await card.findOne({ slug })
     if (oldTitle) {
       res.status(404).send('Title Already Exists')
     }
@@ -16,7 +16,11 @@ const postCards = async (req, res) => {
         description,
         amount,
         day,
-        file,
+        img,
+        slug,
+        user,
+        amountRaised,
+        category
       }
       // req.body
     )

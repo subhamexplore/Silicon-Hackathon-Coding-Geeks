@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Fhome.module.css'
 import Carousel from 'react-bootstrap/Carousel';
-import {HiOutlineBuildingOffice2} from 'react-icons/hi'
+import { HiOutlineBuildingOffice2 } from 'react-icons/hi'
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main><br /><br /><br />
-        <div class={`${styles.welcome}`}>
+        <div className={`${styles.welcome}`}>
           <h1>Welcome to Heart Raiser</h1>
         </div><br /><br />
         <section className={`${styles.newwss}`}>
@@ -89,21 +89,21 @@ export default function Home() {
                 <Carousel controls={false} variant="dark" className={`${styles.tisra}`}>
                   <Carousel.Item className={`${styles.dseccaro}`} interval={1000}>
                     <img
-                      class={`${styles.seccaro} d-block w-100`}
+                      className={`${styles.seccaro} d-block w-100`}
                       src="/1797971.jpg"
                       alt="First slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item className={`${styles.dseccaro}`} interval={1000}>
                     <img
-                      class={`${styles.seccaro} d-block w-100`}
+                      className={`${styles.seccaro} d-block w-100`}
                       src="/5640557.jpg"
                       alt="Second slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item className={`${styles.dseccaro}`} interval={1000}>
                     <img
-                      class={`${styles.seccaro} d-block w-100`}
+                      className={`${styles.seccaro} d-block w-100`}
                       src="/5591010.jpg"
                       alt="Third slide"
                     />
@@ -199,7 +199,7 @@ export default function Home() {
               </div>
             </Carousel.Item>
             <Carousel.Item interval={3000}>
-            <div className={`row ${styles.rowOfNgo}`}>
+              <div className={`row ${styles.rowOfNgo}`}>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
@@ -231,7 +231,7 @@ export default function Home() {
               </div>
             </Carousel.Item>
             <Carousel.Item interval={3000}>
-            <div className={`row ${styles.rowOfNgo}`}>
+              <div className={`row ${styles.rowOfNgo}`}>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
@@ -265,53 +265,53 @@ export default function Home() {
           </Carousel>
         </section>
 
-        <section class="WHY">
-    <div class={`${styles.h}`}><h1>Why Us</h1></div>
-    <br /><br />
-    <div class={`row ${styles.one} space`}>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <div class={`my-3 ${styles.why}`}>We are directly associated with the NGOs globally. NGOs can raise funds in our platform directly and people now can donate directly to NGOs through our platform.</div>
-      </div>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-solid fa-tent-arrow-left-right"></i>
-        <div class={`my-3 ${styles.why}`}>Transaction end to end facility provided here. Now directly communicate and keep raising Hearts.</div>
-      </div>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-solid fa-hand-holding-dollar"></i>
-        <div class={`my-3 ${styles.why}`}>Starting a fundraiser on HeartRaiser is absolutely free.</div>
-      </div>
-    </div>
+        <section className="WHY">
+          <div className={`${styles.h}`}><h1>Why Us</h1></div>
+          <br /><br />
+          <div className={`row ${styles.one} space`}>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <div className={`my-3 ${styles.why}`}>We are directly associated with the NGOs globally. NGOs can raise funds in our platform directly and people now can donate directly to NGOs through our platform.</div>
+            </div>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-solid fa-tent-arrow-left-right"></i>
+              <div className={`my-3 ${styles.why}`}>Transaction end to end facility provided here. Now directly communicate and keep raising Hearts.</div>
+            </div>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-solid fa-hand-holding-dollar"></i>
+              <div className={`my-3 ${styles.why}`}>Starting a fundraiser on HeartRaiser is absolutely free.</div>
+            </div>
+          </div>
 
-    <div class={`row ${styles.two} space`}>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-solid fa-user-group"></i>
-        <div class={`my-3 ${styles.why}`}>User friendly platform with a user friendly Dashboard.</div>
-      </div>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-solid fa-shield-halved"></i>
-        <div class={`my-3 ${styles.why}`}>Enhanced security To Ensure Trust & Safety, froads, etc. Now doante/raise without thinking twice.</div>
-      </div>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-solid fa-heart-circle-plus"></i>
-        <div class={`my-3 ${styles.why}`}>Reward points in the form of Hearts provided. Now the higher you get hearts, you get a badge along with a Certificate in the form of love and appreciation.</div>
-      </div>
-    </div>
-    
-    <div class={`row ${styles.three} space`}>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-solid fa-credit-card"></i>
-        <div class={`my-5 ${styles.why}`}>Accepts donations all cards, netbanking, UPI and online wallets.</div>
-      </div>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-sharp fa-solid fa-phone-volume"></i>
-        <div class={`my-5 ${styles.why}`}>Reach out to us anytime with your queries. We are available for assistance 24x7.</div>
-      </div>
-      <div class={`${styles.whyUs} col-lg-4 col-md-4`}>
-        <i class="fa-solid fa-bullseye"></i>
-        <div class={`my-5 ${styles.why}`}>Your mission is our mission. So, let's make it happen and make it a revolution.</div>
-      </div>
-    </div>
-  </section><br /><br /><br />
+          <div className={`row ${styles.two} space`}>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-solid fa-user-group"></i>
+              <div className={`my-3 ${styles.why}`}>User friendly platform with a user friendly Dashboard.</div>
+            </div>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-solid fa-shield-halved"></i>
+              <div className={`my-3 ${styles.why}`}>Enhanced security To Ensure Trust & Safety, froads, etc. Now doante/raise without thinking twice.</div>
+            </div>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-solid fa-heart-circle-plus"></i>
+              <div className={`my-3 ${styles.why}`}>Reward points in the form of Hearts provided. Now the higher you get hearts, you get a badge along with a Certificate in the form of love and appreciation.</div>
+            </div>
+          </div>
+
+          <div className={`row ${styles.three} space`}>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-solid fa-credit-card"></i>
+              <div className={`my-5 ${styles.why}`}>Accepts donations all cards, netbanking, UPI and online wallets.</div>
+            </div>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-sharp fa-solid fa-phone-volume"></i>
+              <div className={`my-5 ${styles.why}`}>Reach out to us anytime with your queries. We are available for assistance 24x7.</div>
+            </div>
+            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+              <i className="fa-solid fa-bullseye"></i>
+              <div className={`my-5 ${styles.why}`}>Your mission is our mission. So, let's make it happen and make it a revolution.</div>
+            </div>
+          </div>
+        </section><br /><br /><br />
 
       </main>
     </>

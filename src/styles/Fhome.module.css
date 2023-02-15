@@ -150,7 +150,7 @@
   }
   .dev0, .om0{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
   @media screen and (max-width: 970px){
     .about, .aboutt{

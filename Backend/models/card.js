@@ -21,11 +21,24 @@ const card = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: new Date(),
   },
-  // image: {
-  //   type: String,
-  // },
+  img: {
+    type: String,
+  },
+  slug:{
+    type:String,
+  },
+  user:{
+    type : String,
+  },
+  amountRaised : {
+    type : Number,
+    default : 0,
+  },
+  category : {
+    type : String,
+  }
 })
 
 module.exports = mongoose.model('card', card)

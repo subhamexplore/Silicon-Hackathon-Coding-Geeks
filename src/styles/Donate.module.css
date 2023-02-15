@@ -19,9 +19,16 @@
     /* transition: transform 500ms ease-out; */
     
 }
-/* .boxcatu{
-    width:30rem;
-} */
+.btnsearch{
+    background-color: rgba(202, 17, 63, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border: 1px solid white;
+}
+.btnsearch:hover{
+    background-color: rgba(202, 17, 63, 0.986) ;
+    border: 1px solid white;
+}
 .boxcat{
     background-color: rgba(255, 255, 255, 0.4);
     -webkit-backdrop-filter: blur(2px);
@@ -30,6 +37,19 @@
     border: 1px solid white;
     box-shadow: 4px 4px 15px black;
     align-items: center;
+    width:61.8vw;
+}
+.linkcard{
+    text-decoration: none;
+    color: initial;
+}
+.linkcard:hover{
+    color: initial;
+}
+.cardbottom{
+    position:absolute;
+    bottom: 10px;
+    left:50px;
 }
 .circlecat:hover,.circlecat:active{
     background-color: rgba(202, 17, 63, 0.986) ;
@@ -69,6 +89,8 @@
     backdrop-filter: blur(2px);
     border-radius: 15px;
     height:250px;
+    width: 100%;
+    position : relative;
 }
 .cardimgtop{
     height:10em;
@@ -90,7 +112,6 @@
  .outer{
      height:70px;
      width:70px;
-     background-image: conic-gradient(rgba(202, 17, 63, 0.986) 65%,white 35%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -109,4 +130,16 @@
  .number{
      font-weight: 600;
      color: #555;
- }
+    }
+    .searchbar{
+        width:61.8vw;
+    
+    
+    }
+    .searchbarinput{
+        background-color: rgba(255, 255, 255, 0.4)!important;
+    }
+    .searchbarinput:focus{
+        border-color: #ff80ff ;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5) !important;
+    }
