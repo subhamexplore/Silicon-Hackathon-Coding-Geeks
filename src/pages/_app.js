@@ -11,9 +11,9 @@ export default function App({ Component, pageProps }) {
   const [userToken, setUserToken] = useState({ value: "" });
   const [key, setKey] = useState(0);
   const router = useRouter();
+  const token = localStorage.getItem('token');
 
   const getDetails = async () => {
-    const token = localStorage.getItem('token');
     const response = await axios.get('http://localhost:5000/hackathon/user', {
       headers: {
         'Content-Type': 'application/json',
@@ -26,7 +26,6 @@ export default function App({ Component, pageProps }) {
 
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
     if (token) {
       setUserToken({ value: token });
     }
@@ -38,7 +37,10 @@ export default function App({ Component, pageProps }) {
 
 
   useEffect(() => {
-    getDetails();
+    if(token)
+    {
+      getDetails();
+    }
   }, []);
 
 
