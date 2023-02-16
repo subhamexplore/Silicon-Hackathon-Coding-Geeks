@@ -107,7 +107,7 @@ const profile = ({userDetails}) => {
                             </div>
                             <div className={`${styles.donatebox} col-12`}>
                                 <div className={`${styles.cornerheart}`}><AiFillHeart></AiFillHeart></div>
-                                <div className='fs-1 text-black mb-5  d-flex justify-content-center align-items-center'>Your Donations</div>
+                                <div className='fs-1 text-black mb-5  d-flex justify-content-center align-items-center fw-bold mt-5'>Your Donations</div>
 
                                 <div className='d-flex justify-content-center align-items-center row'>
                                     <div className={`${styles.donatecard} card m-3 mb-5 col-12`} >
@@ -128,7 +128,7 @@ const profile = ({userDetails}) => {
                             </div>
                             <div className={`${styles.issuebox} col-12 `}>
                                 <div className={`${styles.cornerheart}`}><AiFillHeart></AiFillHeart></div>
-                                <div className='fs-1 text-black mb-5  d-flex justify-content-center align-items-center'>Your Raises</div>
+                                <div className='fs-1 text-black mb-5  d-flex justify-content-center align-items-center fw-bold mt-5'>Your Raises</div>
                                 <div className='d-flex justify-content-center align-items-center row'>
                                     <div className={`${styles.issuecard} card m-3 mb-5 col-12`} >
                                         <img className="card-img-top" src="/logo.png" alt="Card image cap" />
