@@ -28,7 +28,6 @@ const Signup = () => {
         'Content-Type': 'application/json'
       }
     })
-    console.log(response.data);
     if (response.data.status === "ok") {
       toast.success('Account created successfully', {
         position: "top-center",

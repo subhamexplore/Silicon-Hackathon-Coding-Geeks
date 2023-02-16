@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }) {
     if(token){
       getDetails();
     }
-  }, []);
+  }, [router.query]);
 
 
   return (

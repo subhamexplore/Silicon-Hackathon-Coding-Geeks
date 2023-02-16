@@ -16,7 +16,6 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 const Issue = ({ card }) => {
   const router = useRouter();
   const { slug } = router.query;
-  console.log(card);
 
   const dayCalc = (prev, days) => {
     const prevobj = new Date(prev)
@@ -135,7 +134,6 @@ const Issue = ({ card }) => {
 }
 
 export async function getServerSideProps(context) {
-  console.log(context.params.slug);
   const response = await fetch("http://localhost:5000/hackathon/card");
   const data = await response.json();
   const allCards = data.info;
