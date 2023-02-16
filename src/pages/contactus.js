@@ -7,7 +7,7 @@ const contactus = () => {
     <>
     <div>contactus</div>
 
-      <div className={`${styles.back}`}>
+      <div className={`${styles.back} d-flex justify-content-center`}>
       <div className={`${styles.backcont}`}>
       <p className={`${styles.cont}`}>Contact Us</p>
       <p className={`${styles.us}`}>Already use HeartRaiser? <a className={`${styles.a}`} href="">Sign in </a> so we can tailor your support experience.</p><p className={`${styles.us}`}> If that’s not possible, we’d still like to hear from you.</p>
