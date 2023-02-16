@@ -19,7 +19,12 @@ const Issue = ({ card }) => {
   const router = useRouter();
   const { slug } = router.query;
   const [show, setShow] = useState(false);
-  const [payment, setPayment] = useState();
+  const [payment, setPayment] = useState({
+    slug: "",
+    amt: 0,
+    email: "",
+    username : ""
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -33,11 +38,12 @@ const Issue = ({ card }) => {
   }
 
   const handlePayment = (e) => {
-    setPayment(e.target.value);
+    setPayment({...payment, amt : e.target.value});
+    setPayment({...payment, slug : card.slug});
   }
 
   const makepayment = () => {
-    
+    console.log(payment);
   }
 
   return (
@@ -129,8 +135,7 @@ const Issue = ({ card }) => {
                           stripeKey='pk_test_51Mc4mZSCZZqs4kNxwkltVaJvPSppeT9MfzDbR387odjcu5ftitI8MBxDNaydemRQJQsn2SOcB9Wn1WkGgHNr4hpN00VADCrGhx'
                           label='pay Now'
                           token={makepayment}
-                          amount={500*100}
-                          name={`dev`}
+                          amount={payment.amt}
                           billingAddress
                           shipingAddress
                         />
