@@ -4,8 +4,8 @@
 }
 .desc{
     border: 1px solid rgb(255, 255, 255);
-    background-color: rgba(205, 21, 21, 0.3);
-    backdrop-filter: blur(3px);
+    background-color: rgba(69, 43, 0, 0.3);
+    backdrop-filter: blur(4px);
     box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
 }
 .pic {
@@ -13,7 +13,16 @@
     height: 20rem;
     object-fit: cover;
 }
-
+.donde{
+    color: rgb(170, 255, 41);
+    font-weight: 600;
+    line-height: 5vh;
+    letter-spacing: 0.1rem;
+}
+.dondes{
+    color: rgb(255, 233, 196);
+    padding: 1.2rem;
+}
 .outer {
     height: 90px;
     width: 90px;
@@ -51,7 +60,7 @@
 }
 
 .value {
-    color: brown;
+    color: rgb(145, 255, 101);
 }
 
 .fline {
@@ -59,7 +68,7 @@
 }
 
 .raised {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .days {
