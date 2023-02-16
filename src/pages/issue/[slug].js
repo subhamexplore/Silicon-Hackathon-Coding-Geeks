@@ -26,7 +26,6 @@ const Issue = ({ card }) => {
   }
   return (
     <>
-      {/* <h1>Om<AiFillAlert className="fs-5"></AiFillAlert></h1> */}
 
       <div className="row">
         <div className="left col-lg-3 me-5">
@@ -75,10 +74,10 @@ const Issue = ({ card }) => {
           <div className="row">
             <div className={`${styles.desc} col-lg-8`}>
               <div className={`${styles.h} mt-5`}>
-                <h3>{card.title}</h3>
+                <h3 className={`${styles.donde}`}>{card.title}</h3>
                 <Button className='mt-2 mb-3' variant="danger"><HiDocumentText className='fs-4 mb-1'></HiDocumentText>View Documents</Button>{' '}
               </div>
-              <p>{card.description}</p>
+              <p className={`${styles.dondes}`}>{card.description}</p>
             </div>
 
 
@@ -90,11 +89,11 @@ const Issue = ({ card }) => {
                     <Card.Link className='ms-auto fs-6' href="#">998 Supporters</Card.Link>
                   </div><br />
                   <Card.Title className='fs-2'>₹ {card.amountRaised}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted"><span> raised of </span><span className={`${styles.raised} fs-5`}>₹ {card.amount}</span></Card.Subtitle>
+                  <Card.Subtitle className="mb-2 "><span> raised of </span><span className={`${styles.raised} fs-5`}>₹ {card.amount}</span></Card.Subtitle>
                   <ProgressBar striped variant="success" label={`${Math.floor((card.amountRaised / card.amount) * 100)}%`} animated now={Math.floor((card.amountRaised / card.amount) * 100)} />
                   <div className={`${styles.days} mt-2`}>
                     <Card.Title className='fs-4 ms-auto'>{dayCalc(card.createdAt, card.day)}</Card.Title>
-                    <Card.Subtitle className="text-muted mt-2 mx-1">days left</Card.Subtitle>
+                    <Card.Subtitle className=" mt-2 mx-1">days left</Card.Subtitle>
                   </div>
                   <div className={`${styles.dnow}`}>
                     <Button variant="outline-danger" size="lg" className="fs-6"><AiFillHeart className={`${styles.her} fs-5`}></AiFillHeart> DONATE NOW
