@@ -100,7 +100,7 @@ const Raise = ({ userDetails }) => {
       <form onSubmit={handleSubmit}>
         <Card className={`${styles.per}`} style={{ width: '21rem' }}>
           <Card.Body>
-            <Card.Title className='fs-3 mx-4 mt-3'>{toogle ? "Raise as an NGO" : "Raise for Personal Help"}</Card.Title> <br />
+            <Card.Title className={`${styles.rng} fs-3 mx-4 mt-3 text-center`}>{toogle ? "Raise as an NGO" : "Raise for Personal Help"}</Card.Title> <br />
             {!toogle && <div className='ms-3'>
               <label className={`${styles.textt} mb-1`} htmlFor=""><span>Name<span className={`${styles.mand}`}>*</span></span></label><br />
               <input className={`${styles.labelL}`} type="text" placeholder='Name' name='user' onChange={handleChange} onBlur={(e) => {
@@ -193,7 +193,7 @@ const Raise = ({ userDetails }) => {
           <div className="row">
             <div className={`${styles.leftt} col-lg-6`}>
               <Card.Body>
-                <Card.Title className='fs-3 mb-3'>Beneficiary Information</Card.Title>
+                <Card.Title className='fs-3 mb-3 fw-bold'>Beneficiary Information</Card.Title>
                 <label className={`${styles.textt}`} htmlFor="">{toogle ? "We" : "I"} am raising funds for</label><br />
                 <select className={`${styles.drop}`} name="category" value={details.value} onChange={handleChange} >
                   <option>general</option>
@@ -204,37 +204,37 @@ const Raise = ({ userDetails }) => {
                   <option>environment</option>
                 </select><br /><br />
                 <label className={`${styles.textt} mb-2`} htmlFor="">Account Details for the Victim?</label><br />
-                <input className={`${styles.drop}`} type="text" placeholder='Enter Account Name' value={details.AccountName} name="AccountName" onChange={handleChange} /><br></br>
-                <input className={`${styles.drop}`} type="number" placeholder='Enter Account Number' value={details.AccountNumber} name="AccountNumber" onChange={handleChange} /><br></br>
-                <input className={`${styles.drop}`} type="text" placeholder='Enter IFSC' value={details.IFSCcode} name="IFSCcode" onChange={handleChange} />
+                <input className={`${styles.drop}`} required type="text" placeholder='Enter Account Name' value={details.AccountName} name="AccountName" onChange={handleChange} /><br></br>
+                <input className={`${styles.drop}`} required type="number" placeholder='Enter Account Number' value={details.AccountNumber} name="AccountNumber" onChange={handleChange} /><br></br>
+                <input className={`${styles.drop}`} required type="text" placeholder='Enter IFSC' value={details.IFSCcode} name="IFSCcode" onChange={handleChange} />
                 <br /><br />
                 <label className={`${styles.textt} mb-2`} htmlFor="">What is the issue?</label><br />
-                <input className={`${styles.drop}`} type="text" placeholder='Enter the Issue' name='title' onChange={handleChange} onBlur={makeSlug} value={details.title} />
+                <input className={`${styles.drop}`} required type="text" placeholder='Enter the Issue' name='title' onChange={handleChange} onBlur={makeSlug} value={details.title} />
                 <br /><br />
                 <label className={`${styles.textt} mb-2`} htmlFor="">Victim's Name</label><br />
-                <input className={`${styles.drop}`} type="text" placeholder='Enter the Name' name='vname' onChange={handleChange} value={details.vname} />
+                <input className={`${styles.drop}`} required type="text" placeholder='Enter the Name' name='vname' onChange={handleChange} value={details.vname} />
                 <br /><br />
                 <label className={`${styles.textt} mb-2`} htmlFor="">Location</label><br />
-                <input className={`${styles.drop}`} type="text" placeholder='City' name='location' onChange={handleChange} value={details.location} />
+                <input className={`${styles.drop}`} required type="text" placeholder='City' name='location' onChange={handleChange} value={details.location} />
 
               </Card.Body>
             </div>
             <div className={`${styles.rightt} col-lg-6`}>
               <Card.Body>
-                <Card.Title className='fs-3 mb-3'>Fundraiser Details</Card.Title>
+                <Card.Title className='fs-3 mb-3 fw-bold'>Fundraiser Details</Card.Title>
                 <label className={`${styles.textt} mb-2`} htmlFor="">How much do you want to raise?</label><br />
-                <input className={`${styles.drop}`} type="number" placeholder='Amount' name='amount' onChange={handleChange} value={details.amount} /><br /><br />
+                <input className={`${styles.drop}`} required type="number" placeholder='Amount' name='amount' onChange={handleChange} value={details.amount} /><br /><br />
                 <label className={`${styles.textt} mb-2`} htmlFor="" >{`Due date (in days)`}</label><br />
-                <input className={`${styles.drop}`} type="number" placeholder='' name='day' onChange={handleChange} value={details.day} /><br /><br />
+                <input className={`${styles.drop}`} required type="number" placeholder='' name='day' onChange={handleChange} value={details.day} /><br /><br />
                 <label className={`${styles.textt} mb-2`} htmlFor="">Enter the medical documents</label><br />
-                <div className={`${styles.file}`}><input type="file" /></div>
+                <div className={`${styles.file}`}><input required type="file" /></div>
                 <br />
-                <Card.Title className={`fs-3`}>Tell Us Why</Card.Title>
-                <input type="text" className={`${styles.dropp} mt-2`} placeholder='Fundraiser Name' /><br /><br />
+                <Card.Title className={`fs-3 fw-bold`}>Tell Us Why</Card.Title>
+                <input required type="text" className={`${styles.dropp} mt-2`} placeholder='Fundraiser Name' /><br /><br />
                 <textarea className={`${styles.comment} p-2`} id="comment" placeholder="Tell us why are you running this Fundraiser..."
                   name='description' onChange={handleChange} value={details.description} ></textarea><br></br>
-                <label className={`${styles.textt} mt-3`} htmlFor="">Upload Photos/Videos</label><br></br>
-                <input className={`${styles.drop} ml-4`} type="text" name='img' onChange={handleChange} value={details.img} />
+                <label className={`${styles.textt} mt-3`} htmlFor="">Upload Photos/Videos (Link)</label><br></br>
+                <input className={`${styles.drop} ml-4`} required type="text" name='img' onChange={handleChange} value={details.img} />
               </Card.Body>
             </div>
           </div>
