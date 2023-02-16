@@ -24,6 +24,7 @@
     font-size: 1.3em;
     color: aliceblue;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .profilelink{
@@ -101,12 +102,14 @@
     padding-left: 5vw;
     height: 170px;
 }
-
+.data{
+    color: greenyellow;
+}
 .title{
     letter-spacing: 5px;
     font-size: xx-large;
     font-weight: bold;
-    color:black;
+    color:rgb(255, 249, 226);
 }
 
 .ngobox {
@@ -129,8 +132,8 @@
     /* border-left: thick solid rgba(202, 17, 63, 0.986); */
     /* border-top:thick solid rgba(202, 17, 63, 0.986); */
     position: relative;
-    background-color: rgba(58, 22, 22, 0.267);
-    backdrop-filter: blur(2px);
+    background-color: rgba(126, 126, 126, 0.267);
+    backdrop-filter: blur(5px);
     border-radius: 15px;
     box-shadow: 4px 4px 15px black;
     /* width: 47%; */
@@ -182,6 +185,7 @@
     transform: scale(1.4);
     background-color: rgba(202, 17, 63, 0.986);
     color: white;
+    transition-delay: 0.5s;
 }
 
 .plus:active {
@@ -200,7 +204,7 @@
     font-size: 1.3em;
     color: aliceblue;
     background-color: rgba(212, 87, 118, 0.3);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     border-radius: 15px;
     box-shadow: 4px 4px 15px black;
     /* width: 47%; */
