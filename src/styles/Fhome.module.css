@@ -220,10 +220,13 @@
     margin: auto;
   }
 
-  .WHY i{
+  .i{
     font-size: 50px;
     position: relative;
     left: 0;
+  }
+  .ii{
+    font-size: 10px;
   }
   .whyUss{
     border: 1px solid black;
