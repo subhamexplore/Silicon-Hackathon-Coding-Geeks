@@ -38,7 +38,10 @@ export default function App({ Component, pageProps }) {
 
 
   useEffect(() => {
-    getDetails();
+    const token = localStorage.getItem('token');
+    if(token){
+      getDetails();
+    }
   }, []);
 
 
