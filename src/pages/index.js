@@ -2,9 +2,17 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Fhome.module.css'
 import Carousel from 'react-bootstrap/Carousel';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FontAwesome from 'react-fontawesome';
-import {HiBuildingOffice2} from 'react-icons/hi'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBuilding} from '@fortawesome/free-solid-svg-icons'
+import {GrTransaction} from 'react-icons/gr'
+import {RiHandHeartFill} from 'react-icons/ri'
+import {HiUsers} from 'react-icons/hi'
+import {MdOutlineSecurity} from 'react-icons/md'
+import {RiHeartAddFill} from 'react-icons/ri'
+import {BsFillCreditCardFill} from 'react-icons/bs'
+import {MdAddIcCall} from 'react-icons/md'
+import {GiBullseye} from 'react-icons/gi'
+import {FaBuilding} from 'react-icons/fa'
 
 export default function Home() {
   return (
@@ -279,45 +287,45 @@ export default function Home() {
           <br /><br />
           <div className={`row ${styles.one} space`}>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
-              <div className={`my-3 ${styles.why}`}>We are directly associated with the NGOs globally. NGOs can raise funds in our platform directly and people now can donate directly to NGOs through our platform.</div>
+              <div className={`my-3 ${styles.why}`}><FaBuilding className={`${styles.i}`}></FaBuilding> We are directly associated with the NGOs globally. NGOs can raise funds in our platform directly and people now can donate directly to NGOs through our platform.</div>
             </div>
             <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-tent-arrow-left-right"></i>
-              <div className={`my-3 ${styles.why}`}>Transaction end to end facility provided here. Now directly communicate and keep raising Hearts.</div>
+              <div className={`my-3 ${styles.why}`}><GrTransaction className={`${styles.i}`}></GrTransaction> Transaction end to end facility provided here. Now directly communicate and keep raising Hearts.</div>
             </div>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-hand-holding-dollar"></i>
-              <div className={`my-3 ${styles.why}`}>Starting a fundraiser on HeartRaiser is absolutely free.</div>
+              <div className={`my-3 ${styles.why}`}><RiHandHeartFill className={`${styles.i}`}></RiHandHeartFill> Starting a fundraiser on HeartRaiser is absolutely free.</div>
             </div>
           </div>
 
           <div className={`row ${styles.two} space`}>
             <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-user-group"></i>
-              <div className={`my-3 ${styles.why}`}>User friendly platform with a user friendly Dashboard.</div>
+              <div className={`my-3 ${styles.why}`}><HiUsers className={`${styles.i}`}></HiUsers> User friendly platform with a user friendly Dashboard.</div>
             </div>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-shield-halved"></i>
-              <div className={`my-3 ${styles.why}`}>Enhanced security To Ensure Trust & Safety, froads, etc. Now doante/raise without thinking twice.</div>
+              <div className={`my-3 ${styles.why}`}><MdOutlineSecurity className={`${styles.i}`}></MdOutlineSecurity> Enhanced security To Ensure Trust & Safety, froads, etc. Now doante/raise without thinking twice.</div>
             </div>
             <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-heart-circle-plus"></i>
-              <div className={`my-3 ${styles.why}`}>Reward points in the form of Hearts provided. Now the higher you get hearts, you get a badge along with a Certificate in the form of love and appreciation.</div>
+              <div className={`my-3 ${styles.why}`}><RiHeartAddFill className={`${styles.i}`}></RiHeartAddFill> Reward points in the form of Hearts provided. Now the higher you get hearts, you get a badge along with a Certificate in the form of love and appreciation.</div>
             </div>
           </div>
 
           <div className={`row ${styles.three} space`}>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-credit-card"></i>
-              <div className={`my-5 ${styles.why}`}>Accepts donations all cards, netbanking, UPI and online wallets.</div>
+              <div className={`my-5 ${styles.why}`}><BsFillCreditCardFill className={`${styles.i}`}></BsFillCreditCardFill> Accepts donations all cards, netbanking, UPI and online wallets.</div>
             </div>
             <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-sharp fa-solid fa-phone-volume"></i>
-              <div className={`my-5 ${styles.why}`}>Reach out to us anytime with your queries. We are available for assistance 24x7.</div>
+              <div className={`my-5 ${styles.why}`}><MdAddIcCall className={`${styles.i}`}></MdAddIcCall> Reach out to us anytime with your queries. We are available for assistance 24x7.</div>
             </div>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-bullseye"></i>
-              <div className={`my-5 ${styles.why}`}>Your mission is our mission. So, let's make it happen and make it a revolution.</div>
+              <div className={`my-5 ${styles.why}`}><GiBullseye className={`${styles.i}`}></GiBullseye> Your mission is our mission. So, let's make it happen and make it a revolution.</div>
             </div>
           </div>
         </section><br /><br /><br />
