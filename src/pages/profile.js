@@ -51,6 +51,7 @@ const profile = () => {
     useEffect(() => {
         getsignupDetails();
     }, []);
+    
     useEffect(() => {
         getDetails();
         changeBackground();

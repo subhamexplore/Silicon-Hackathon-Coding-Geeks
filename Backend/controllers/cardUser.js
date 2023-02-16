@@ -4,7 +4,7 @@ const card = require('../models/card')
 // const fs = require('fs')
 
 const postCards = async (req, res) => {
-  const { title, description, amount, day, img, slug , user, amountRaised, category} = req.body
+  const { title, description, amount, day, img, slug , user, email, amountRaised, category, vname,phone,location,AccountName,AccountNumber,IFSCcode} = req.body
   try {
     const oldTitle = await card.findOne({ slug })
     if (oldTitle) {
@@ -19,8 +19,15 @@ const postCards = async (req, res) => {
         img,
         slug,
         user,
+        email,
         amountRaised,
-        category
+        category,
+        vname,
+        phone,
+        location,
+        AccountName,
+        AccountNumber,
+        IFSCcode
       }
       // req.body
     )
@@ -38,7 +45,7 @@ const postCards = async (req, res) => {
 
 const getCards=async(req,res)=>{
     const detail=await card.find({});
-    res.status(200).send({info:detail})
+    res.send({status : "ok", info:detail})
 }
 
 module.exports = {postCards,getCards}

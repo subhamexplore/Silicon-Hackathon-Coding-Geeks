@@ -30,11 +30,32 @@ const card = new mongoose.Schema({
   user:{
     type : String,
   },
+  email:{
+    type : String,
+  },
   amountRaised : {
     type : Number,
     default : 0,
   },
   category : {
+    type : String,
+  },
+  vname:{
+    type : String,
+  },
+  phone:{
+    type : String,
+  },
+  location:{
+    type: String
+  },
+  AccountName:{
+    type : String,
+  },
+  AccountNumber:{
+    type : Number,
+  },
+  IFSCcode : {
     type : String,
   }
 })
