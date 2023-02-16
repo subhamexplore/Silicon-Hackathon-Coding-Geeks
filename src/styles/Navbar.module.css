@@ -4,9 +4,9 @@
     align-items: center;
     height: 55px;
     width: 55px;
-    border: 1px solid whitesmoke;
-    background-color: rgba(254, 2, 65, 0.3);
-    backdrop-filter: blur(2px);
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(108, 108, 108, 0.3);
+    backdrop-filter: blur(3px);
     box-shadow: 6px 6px 7px rgba(40, 39, 39, 0.4);
     border-radius: 50%;
     margin-left: 4rem;
@@ -16,7 +16,7 @@
 
 .pro {
     font-size: 1.5rem;
-    color: rgb(81, 0, 21);
+    color: rgba(207, 6, 6, 0.724);
 }
 .profile:hover{
     border-color: rgb(254, 2, 65) !important;
@@ -34,21 +34,29 @@
 
 .logoo {
     border-radius: 30px;
-    border: 1px solid rgba(241, 165, 250, 1);
-    background-color: rgba(254, 2, 65, 0.3);
-    backdrop-filter: blur(2px);
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(108, 108, 108, 0.3);
+    backdrop-filter: blur(3px);
     box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
 }
 
 .li {
     padding-left: 4vw;
     font-size: 1.25rem;
-    font-weight: bold;
-    color: black 
+    font-weight: 500;
+    color: rgb(255, 255, 255) 
+}
+.lii{
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .li:hover{
     color:rgb(254, 2, 65)
+}
+.lii:hover{
+    color:rgb(255, 255, 255) 
 }
 
 .li:active{
@@ -59,6 +67,7 @@
 .call {
     padding-left: 0.25rem;
     padding-bottom: 0.2rem;
+    color: rgb(207, 6, 6);
 }
 
 .header {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import styles from "../../styles/IndividualIssue.module.css"
 import { AiFillAlert } from "react-icons/ai"
@@ -12,11 +12,17 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import Modal from 'react-bootstrap/Modal';
+import StripeCheckout from 'react-stripe-checkout'
 
 const Issue = ({ card }) => {
   const router = useRouter();
   const { slug } = router.query;
-  console.log(card);
+  const [show, setShow] = useState(false);
+  const [payment, setPayment] = useState();
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const dayCalc = (prev, days) => {
     const prevobj = new Date(prev)
@@ -25,10 +31,17 @@ const Issue = ({ card }) => {
     const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
     return Math.ceil(days - Difference_In_Days);
   }
+
+  const handlePayment = (e) => {
+    setPayment(e.target.value);
+  }
+
+  const makepayment = () => {
+    
+  }
+
   return (
     <>
-      {/* <h1>Om<AiFillAlert className="fs-5"></AiFillAlert></h1> */}
-
       <div className="row">
         <div className="left col-lg-3 me-5">
           <Carousel className={`${styles.pics} mt-5`}>
@@ -76,10 +89,10 @@ const Issue = ({ card }) => {
           <div className="row">
             <div className={`${styles.desc} col-lg-8`}>
               <div className={`${styles.h} mt-5`}>
-                <h3>{card.title}</h3>
+                <h3 className={`${styles.donde}`}>{card.title}</h3>
                 <Button className='mt-2 mb-3' variant="danger"><HiDocumentText className='fs-4 mb-1'></HiDocumentText>View Documents</Button>{' '}
               </div>
-              <p>{card.description}</p>
+              <p className={`${styles.dondes}`}>{card.description}</p>
             </div>
 
 
@@ -91,15 +104,38 @@ const Issue = ({ card }) => {
                     <Card.Link className='ms-auto fs-6' href="#">998 Supporters</Card.Link>
                   </div><br />
                   <Card.Title className='fs-2'>₹ {card.amountRaised}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted"><span> raised of </span><span className={`${styles.raised} fs-5`}>₹ {card.amount}</span></Card.Subtitle>
+                  <Card.Subtitle className="mb-2 "><span> raised of </span><span className={`${styles.raised} fs-5`}>₹ {card.amount}</span></Card.Subtitle>
                   <ProgressBar striped variant="success" label={`${Math.floor((card.amountRaised / card.amount) * 100)}%`} animated now={Math.floor((card.amountRaised / card.amount) * 100)} />
                   <div className={`${styles.days} mt-2`}>
                     <Card.Title className='fs-4 ms-auto'>{dayCalc(card.createdAt, card.day)}</Card.Title>
-                    <Card.Subtitle className="text-muted mt-2 mx-1">days left</Card.Subtitle>
+                    <Card.Subtitle className=" mt-2 mx-1">days left</Card.Subtitle>
                   </div>
                   <div className={`${styles.dnow}`}>
-                    <Button variant="outline-danger" size="lg" className="fs-6"><AiFillHeart className={`${styles.her} fs-5`}></AiFillHeart> DONATE NOW
+                    <Button variant="outline-danger" size="lg" className="fs-6" onClick={handleShow}><AiFillHeart className={`${styles.her} fs-5`}></AiFillHeart> DONATE NOW
                     </Button>
+                    <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Pay to HeartRaiser</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <label className={`${styles.textt} mb-1`} htmlFor=""><span>Enter Amount<span className={`${styles.mand}`}>*</span></span></label><br />
+                        <input className={`${styles.labelL}`} type="number" placeholder='Amount' name='phone' onChange={handlePayment}/>
+                      </Modal.Body>
+                      <Modal.Footer>
+                        {/* <Button variant="primary" onClick={makepayment}>
+                          Save Changes
+                        </Button> */}
+                        <StripeCheckout
+                          stripeKey='pk_test_51Mc4mZSCZZqs4kNxwkltVaJvPSppeT9MfzDbR387odjcu5ftitI8MBxDNaydemRQJQsn2SOcB9Wn1WkGgHNr4hpN00VADCrGhx'
+                          label='pay Now'
+                          token={makepayment}
+                          amount={500*100}
+                          name={`dev`}
+                          billingAddress
+                          shipingAddress
+                        />
+                      </Modal.Footer>
+                    </Modal>
                   </div>
                   <Card.Subtitle className={`${styles.pay} text-muted mt-3 mx-4`}>Card, Netbanking, Cheque pickups</Card.Subtitle>
                   <div className={`${styles.align}`}>
@@ -135,7 +171,6 @@ const Issue = ({ card }) => {
 }
 
 export async function getServerSideProps(context) {
-  console.log(context.params.slug);
   const response = await fetch("http://localhost:5000/hackathon/card");
   const data = await response.json();
   const allCards = data.info;

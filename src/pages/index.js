@@ -2,7 +2,17 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Fhome.module.css'
 import Carousel from 'react-bootstrap/Carousel';
-import { HiOutlineBuildingOffice2 } from 'react-icons/hi'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBuilding} from '@fortawesome/free-solid-svg-icons'
+import {GrTransaction} from 'react-icons/gr'
+import {RiHandHeartFill} from 'react-icons/ri'
+import {HiUsers} from 'react-icons/hi'
+import {MdOutlineSecurity} from 'react-icons/md'
+import {RiHeartAddFill} from 'react-icons/ri'
+import {BsFillCreditCardFill} from 'react-icons/bs'
+import {MdAddIcCall} from 'react-icons/md'
+import {GiBullseye} from 'react-icons/gi'
+import {FaBuilding} from 'react-icons/fa'
 
 export default function Home() {
   return (
@@ -15,7 +25,7 @@ export default function Home() {
       </Head>
       <main><br /><br /><br />
         <div className={`${styles.welcome}`}>
-          <h1>Welcome to Heart Raiser</h1>
+          <h1><span>Welcome to </span><span className={`${styles.heart}`}>Heart</span><span className={`${styles.raiser}`}> Raiser</span></h1>
         </div><br /><br />
         <section className={`${styles.newwss}`}>
           <div className={`${styles.newsd}`}>
@@ -116,14 +126,20 @@ export default function Home() {
 
         <section className={`${styles.About}`}>
           <div className={`${styles.abouthead}`}>
-            <h1>About Us</h1><hr className={`${styles.hr}`} />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos saepe ut nobis ex maxime, nihil non maiores, qui repellendus nemo optio doloribus culpa fuga vel cum. Vel illum dolores sapiente itaque consectetur explicabo vitae aliquid ducimus? Dolores maiores dicta exercitationem vitae nobis autem magnam. Numquam reiciendis vero consectetur laudantium voluptatum placeat id, deserunt quia repellendus odit accusamus quam. Ipsam quidem, dolorum ducimus nam magni vero earum repellendus libero fugiat, possimus dolores saepe architecto velit sequi voluptate vitae tempora, eveniet maxime consectetur quos? Reiciendis iusto deleniti rerum neque, aliquam ab deserunt consequatur reprehenderit ipsa totam porro officiis modi? Qui, asperiores inventore?</p>
+            <h1><span className={`${styles.abou}`}>About </span><span className={`${styles.uss}`}>Us</span></h1><hr className={`${styles.hr}`} />
+            <div className={`${styles.detailss}`}>
+            <p className={`${styles.paraab}`}>We are non-profit organisation, working over India to help raising fund for anyone who is in need, to strengthen humanity and to face poverty.</p>
+            <p className={`${styles.paraab}`}>We will offer financial help to raise fund online. We will reach out to the people suffering from poverty, accident, disadvantages of everyday life. We are giving long-term support and emergency assistance to the patients. We sim to invest in real effective solution and to give immediate relief to the sufferer</p>
+            <p className={`${styles.paraab}`}>
+              We have a vision to develop India, to free people from penury and to help the destitute at times. We are working unfateringly to bring hope in the heart of poor, to help them fight against the poverty.
+            </p>
+            </div>
           </div><br />
 
           <div className={`${styles.person}`}>
             <div className={`${styles.abhi0}`}>
               <div className={`${styles.abhi}`}>
-                <div className={`${styles.img}`}></div>
+                <div className={`${styles.img1}`}></div>
                 <div className={`${styles.about}`}>
                   <h3>Abhijeet Sahu</h3>
                   <p className={`${styles.work}`}>Front-end Developer (CSE 2nd Year, OUTR-25)</p>
@@ -138,12 +154,12 @@ export default function Home() {
                   <p className={`${styles.work}`}>Full Stack Developer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Alone we can do so little, together we can do so much."</p>
                 </div>
-                <div className={`${styles.img1}`}></div>
+                <div className={`${styles.img2}`}></div>
               </div>
             </div><br />
             <div className={`${styles.paras0}`}>
               <div className={`${styles.paras}`}>
-                <div className={`${styles.img}`}></div>
+                <div className={`${styles.img3}`}></div>
 
                 <div className={`${styles.about}`}>
                   <h3>Paras Singh Bhatia</h3>
@@ -159,11 +175,12 @@ export default function Home() {
                   <p className={`${styles.work}`}>Frontend Developer, Designer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Not all of us can do great things, but we can do small things with great love."</p>
                 </div>
-                <div className={`${styles.img1}`}></div>
+                <div className={`${styles.img4}`}></div>
               </div>
             </div>
           </div>
         </section>
+
         <section className="NGO">
           <Carousel indicators={false} variant="dark" className={`carousel-inner ${styles.subham}`}>
             <Carousel.Item interval={3000}>
@@ -171,61 +188,29 @@ export default function Home() {
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item interval={3000}>
-              <div className={`row ${styles.rowOfNgo}`}>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
               </div>
@@ -235,29 +220,61 @@ export default function Home() {
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
                   <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item interval={3000}>
+              <div className={`row ${styles.rowOfNgo}`}>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
               </div>
@@ -266,49 +283,49 @@ export default function Home() {
         </section>
 
         <section className="WHY">
-          <div className={`${styles.h}`}><h1>Why Us</h1></div>
+          <div className={`${styles.h}`}><h1><span>Why </span><span className={`${styles.usss}`}>Us</span></h1></div>
           <br /><br />
           <div className={`row ${styles.one} space`}>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
-              <div className={`my-3 ${styles.why}`}>We are directly associated with the NGOs globally. NGOs can raise funds in our platform directly and people now can donate directly to NGOs through our platform.</div>
+              <div className={`my-3 ${styles.why}`}><FaBuilding className={`${styles.i}`}></FaBuilding> We are directly associated with the NGOs globally. NGOs can raise funds in our platform directly and people now can donate directly to NGOs through our platform.</div>
             </div>
-            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+            <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-tent-arrow-left-right"></i>
-              <div className={`my-3 ${styles.why}`}>Transaction end to end facility provided here. Now directly communicate and keep raising Hearts.</div>
+              <div className={`my-3 ${styles.why}`}><GrTransaction className={`${styles.i}`}></GrTransaction> Transaction end to end facility provided here. Now directly communicate and keep raising Hearts.</div>
             </div>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-hand-holding-dollar"></i>
-              <div className={`my-3 ${styles.why}`}>Starting a fundraiser on HeartRaiser is absolutely free.</div>
+              <div className={`my-3 ${styles.why}`}><RiHandHeartFill className={`${styles.i}`}></RiHandHeartFill> Starting a fundraiser on HeartRaiser is absolutely free.</div>
             </div>
           </div>
 
           <div className={`row ${styles.two} space`}>
-            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+            <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-user-group"></i>
-              <div className={`my-3 ${styles.why}`}>User friendly platform with a user friendly Dashboard.</div>
+              <div className={`my-3 ${styles.why}`}><HiUsers className={`${styles.i}`}></HiUsers> User friendly platform with a user friendly Dashboard.</div>
             </div>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-shield-halved"></i>
-              <div className={`my-3 ${styles.why}`}>Enhanced security To Ensure Trust & Safety, froads, etc. Now doante/raise without thinking twice.</div>
+              <div className={`my-3 ${styles.why}`}><MdOutlineSecurity className={`${styles.i}`}></MdOutlineSecurity> Enhanced security To Ensure Trust & Safety, froads, etc. Now doante/raise without thinking twice.</div>
             </div>
-            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+            <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-heart-circle-plus"></i>
-              <div className={`my-3 ${styles.why}`}>Reward points in the form of Hearts provided. Now the higher you get hearts, you get a badge along with a Certificate in the form of love and appreciation.</div>
+              <div className={`my-3 ${styles.why}`}><RiHeartAddFill className={`${styles.i}`}></RiHeartAddFill> Reward points in the form of Hearts provided. Now the higher you get hearts, you get a badge along with a Certificate in the form of love and appreciation.</div>
             </div>
           </div>
 
           <div className={`row ${styles.three} space`}>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-credit-card"></i>
-              <div className={`my-5 ${styles.why}`}>Accepts donations all cards, netbanking, UPI and online wallets.</div>
+              <div className={`my-5 ${styles.why}`}><BsFillCreditCardFill className={`${styles.i}`}></BsFillCreditCardFill> Accepts donations all cards, netbanking, UPI and online wallets.</div>
             </div>
-            <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
+            <div className={`${styles.whyUss} col-lg-4 col-md-4`}>
               <i className="fa-sharp fa-solid fa-phone-volume"></i>
-              <div className={`my-5 ${styles.why}`}>Reach out to us anytime with your queries. We are available for assistance 24x7.</div>
+              <div className={`my-5 ${styles.why}`}><MdAddIcCall className={`${styles.i}`}></MdAddIcCall> Reach out to us anytime with your queries. We are available for assistance 24x7.</div>
             </div>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
               <i className="fa-solid fa-bullseye"></i>
-              <div className={`my-5 ${styles.why}`}>Your mission is our mission. So, let's make it happen and make it a revolution.</div>
+              <div className={`my-5 ${styles.why}`}><GiBullseye className={`${styles.i}`}></GiBullseye> Your mission is our mission. So, let's make it happen and make it a revolution.</div>
             </div>
           </div>
         </section><br /><br /><br />

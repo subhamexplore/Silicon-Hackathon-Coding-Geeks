@@ -101,16 +101,27 @@
     font-weight: 600;
     font-size: 17px;
   }
-  .img{
-    background-image: url(/1797971.jpg);
+  .img1{
+    background-image: url(/abhijeet.png);
+  }
+  .img2{
+    background-image: url(/dev.png);
+  }
+  .img3{
+    background-image: url(/paras.png);
+  }
+  .img4{
+    background-image: url(/subham.png);
+  }
+  .img1, .img3{
+
     background-repeat: no-repeat;
     background-size: cover;
     height: 180px;
     width: 180px;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   }
-  .img1{
-    background-image: url(/1797971.jpg);
+  .img2, .img4{
     background-repeat: no-repeat;
     background-size: cover;
     height: 180px;
@@ -156,7 +167,7 @@
     .about, .aboutt{
       height: 250px;
     }
-    .img, .img1{
+    .img1, .img2, .img3, .img4{
       margin-top: 4rem;
       height: 120px;
       width: 120px;
@@ -164,7 +175,14 @@
   }
 
   /* NGO section */
-
+  .cardtitle{
+    font-size: 1.7rem;
+    color: rgb(67, 0, 0);
+  }
+  .cardtext{
+    color: rgb(35, 20, 0);
+    font-weight: 500;
+  }
   .rowOfNgo{
     display: flex;
     justify-content: center;
@@ -173,7 +191,7 @@
   .card{
     margin-top: 2rem;
     border-radius: 1.5rem;
-    background-color: rgba(82, 10, 10, 0.3);
+    background-color: rgba(255, 227, 134, 0.3);
     backdrop-filter: blur(3px);
     box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
     width: 16rem;
@@ -202,10 +220,22 @@
     margin: auto;
   }
 
-  .WHY i{
+  .i{
     font-size: 50px;
     position: relative;
     left: 0;
+  }
+  .ii{
+    font-size: 10px;
+  }
+  .whyUss{
+    border: 1px solid black;
+    background-color: rgba(255, 169, 169, 0.42);
+    backdrop-filter: blur(3px);
+    box-shadow: 15px 15px 7px rgba(40, 39, 39, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .whyUs{
     border: 1px solid black;
@@ -216,11 +246,17 @@
     align-items: center;
     justify-content: center;
   }
+  .usss{
+    color: red;
+    font-weight: bold;
+  }
   .why{
     margin-left: 2rem;
   }
   .h{
     text-align: center;
+    color: white;
+    font-weight: bold;
   }
   .one, .two, .three{
     transition: all 0.2s;
@@ -230,4 +266,28 @@
   }
   .welcome{
     text-align: center;
+    color: aliceblue;
+  }
+  .paraab{
+    font-size: large;
+    color: antiquewhite;
+  }
+  .detailss{
+    background-color: rgba(255, 0, 0, 0.313);
+  }
+  .heart{
+    color: red;
+    font-weight: bold;
+  }
+  .raiser{
+    color: white;
+    font-weight: bold;
+  }
+  .abou{
+    color: white;
+    font-weight: bold;
+  }
+  .uss{
+    color: red;
+    font-weight: bold;
   }

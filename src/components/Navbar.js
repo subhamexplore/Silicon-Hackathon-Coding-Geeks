@@ -5,8 +5,7 @@ import { FaUserAlt } from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { RiLoginBoxFill } from 'react-icons/ri'
 
-
-const Navbar = ({userToken}) => {
+const Navbar = ({ userToken }) => {
     const [b, setB] = useState(false)
     const change = () => {
         setB((prev) => {
@@ -15,6 +14,7 @@ const Navbar = ({userToken}) => {
     }
     return (
         <>
+
             <section className="headerrr">
                 <div className={styles.header}>
                     <div className={styles.roww}>
@@ -26,7 +26,7 @@ const Navbar = ({userToken}) => {
                                         <Link href="/" legacyBehavior={true}><a className="nav-link" aria-current="page" >Home</a></Link>
                                     </li>
                                     <li className={`${styles.li} nav-item`}>
-                                        <Link href="/donate" legacyBehavior={true}><a className="nav-link">Donate</a></Link>
+                                        <Link href="/donate" legacyBehavior={true}><a className={`nav-link`}><p className={`${styles.donatee}`}>Donate</p></a></Link>
                                     </li>
                                     <li className={`${styles.li} nav-item`}>
                                         <Link href="/raise" legacyBehavior={true}><a className="nav-link">Raise</a></Link>
@@ -55,7 +55,7 @@ const Navbar = ({userToken}) => {
                                                 <Link href="/" className={`${styles.li} nav-link`} >Home</Link>
                                             </li>
                                             <li className={`${styles.li} nav-item`}>
-                                                <Link href="/donate" className={`${styles.li} nav-link`}>Donate</Link>
+                                                <Link href="/donate" className={`${styles.li} ${styles.lii} nav-link`}>Donate</Link>
                                             </li>
                                             <li className={`${styles.li} nav-item`}>
                                                 <Link href="/raise" className={`${styles.li} nav-link`}>Raise</Link>

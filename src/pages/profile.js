@@ -5,9 +5,8 @@ import { AiFillHeart } from "react-icons/ai"
 import Link from 'next/link';
 import axios from 'axios';
 
-const profile = () => {
+const profile = ({userDetails}) => {
     const router = useRouter();
-    const [userDetails, setUserDetails] = useState();
     const [loggedIn, setLoggedIn] = useState({
         iat: "",
         email: "",
@@ -22,21 +21,8 @@ const profile = () => {
         document.documentElement.style.setProperty('--backColor', `#${crypto}b0`);
     }
 
-    const getDetails = async () => {
-        const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/hackathon/user', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
-        })
-
-        const obj1 = response.data.uzzer;
-        setUserDetails(obj1);
-    }
     const getsignupDetails = async () => {
         const token = localStorage.getItem('token');
-        console.log(token);
         const response = await axios.get('http://localhost:5000/hackathon/home', {
             headers: {
                 'Content-Type': 'application/json',
@@ -50,12 +36,9 @@ const profile = () => {
     }
     useEffect(() => {
         getsignupDetails();
-    }, []);
-    
-    useEffect(() => {
-        getDetails();
         changeBackground();
-    }, [router.query])
+    }, [router.query]);
+    
     return (
         <>
             <div className={`row  ${styles.boddy} py-5`}>
@@ -166,8 +149,6 @@ const profile = () => {
                             </div>
                         </div>
                     </>
-                    {/* {sidenav == 1 && <Accountdetails userDetails={userDetails} initialDetails={initialDetails} setSidenav={setSidenav}/>}
-                    {sidenav == 2 && <Ngodetails setSidenav={setSidenav}/>} */}
                 </div>
             </div>
         </>
