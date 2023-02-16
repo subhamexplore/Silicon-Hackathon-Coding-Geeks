@@ -7,10 +7,12 @@ const contactus = () => {
     <>
     <div>contactus</div>
 
-    <div className={`${styles.back}`}>
+      <div className={`${styles.back} d-flex justify-content-center`}>
+      <div className={`${styles.backcont}`}>
       <p className={`${styles.cont}`}>Contact Us</p>
-      <p className={`${styles.us}`}>Already use HeartRaiser? <a href="">Sign in </a> so we can tailor your support experience.</p><p className={`${styles.us}`}> If that’s not possible, we’d still like to hear from you.</p>
-    </div>
+      <p className={`${styles.us}`}>Already use HeartRaiser? <a className={`${styles.a}`} href="">Sign in </a> so we can tailor your support experience.</p><p className={`${styles.us}`}> If that’s not possible, we’d still like to hear from you.</p>
+      </div>
+   </div>
     <div className={`${styles.details}`}>
     <Card className={`${styles.cardus} mx-auto`}>
       <Card.Body>
@@ -24,20 +26,20 @@ const contactus = () => {
         <input className={`${styles.ibox} mb-4`} type="text" placeholder='Enter your number' />
         <Card.Title>Details</Card.Title>
         <textarea className={`${styles.det} mb-4`} name="" id="" cols="30" rows="10" placeholder="Please write your question or a description of the problem you're trying to solve here."></textarea><br />
-        <div className={`${styles.btnn}`}><input className={`${styles.ibtn}`} type="submit" /></div>
+        <div className={`${styles.btnn}`}><input className={`${styles.ibtn} fs-4`} type="submit" /></div>
       </Card.Body>
     </Card>
     </div><br />
     <div className={`${styles.down} row`}>
-      <div className={`${styles.ll} col-lg-6`}>
+      <div className={`${styles.ll} col-lg-6 d-flex align-items-center justify-content-center`}>
         <img className={`${styles.loggg} my-5 mx-4`} src="/Vectorcal.png" alt="" />
         <div className='my-5'>
           <p>Call us directly at</p>
           <p>+91-9443875824</p>
-          <a href="">see all numbers and locations</a>
+          <a className={`${styles.a}`} href="">see all numbers and locations</a>
         </div>
       </div>
-      <div className={`${styles.rr} col-lg-6`}>
+      <div className={`${styles.rr} col-lg-6 d-flex align-items-center justify-content-center`}>
         <img className={`${styles.loggg} my-5 mx-4`} src="/Vectorchat.png" alt="" />
         <div className='my-5'>
           <p>Chat with our team</p>
