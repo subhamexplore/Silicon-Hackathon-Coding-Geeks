@@ -1,9 +1,4 @@
-/* body{
-    background: url(pexels-lukas-628241.jpg);
-    height: 100vh;
-    background-repeat: repeat-y;
-    background-size:cover;
-} */
+
 .circlecat{
     background-color: rgba(202, 17, 63, 0.4);
     -webkit-backdrop-filter: blur(2px);
@@ -16,7 +11,6 @@
     align-items: center;
     cursor:pointer;
     font-size: 1.5rem;
-    /* transition: transform 500ms ease-out; */
     
 }
 .btnsearch{
@@ -49,7 +43,7 @@
 .cardbottom{
     position:absolute;
     bottom: 10px;
-    left:50px;
+    left:85px;
 }
 .circlecat:hover,.circlecat:active{
     background-color: rgba(202, 17, 63, 0.986) ;
@@ -60,11 +54,8 @@
     animation-timing-function: ease-out;
 }
 .card:hover{
-    /* backface-visibility: hidden;
-    transform: scale(1.09);  */
-    /* /* transform: translateZ(1.1); */
     cursor: pointer;
-    /* font-smoothing: subpixel-antialiased; */
+   
 }
 @keyframes rot{
     20% {transform: rotate(0deg);}
@@ -73,19 +64,18 @@
     100% {transform: rotate(0deg);}
   }
   .card{
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.164);
     backdrop-filter: blur(2px);
     border-radius: 15px;
     border: 1px solid white;
     box-shadow: 4px 4px 15px black;
     align-items: center;
-    width:16em;
-    height:427px;
+    width:21em;
+    height:520px;
     backface-visibility: hidden;
-    /* transform: scale(1) */
 }
 .cardbody{
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.233);
     backdrop-filter: blur(2px);
     border-radius: 15px;
     height:250px;
@@ -93,10 +83,11 @@
     position : relative;
 }
 .cardimgtop{
-    height:10em;
-    width:15em;
+    height:15em;
+    width:21em;
     padding:1.5em;
     margin-bottom: 0;
+    border-radius: 2rem;
 }
 .cent{
     position: relative;
@@ -143,3 +134,14 @@
         border-color: #ff80ff ;
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5) !important;
     }
+   .titletext{
+  width: 100%;
+  height:3em;
+  overflow: hidden;
+   }
+   .days{
+    margin-bottom: 5em;
+   }
+   .bycolor{
+    color:rgba(10, 9, 9, 0.562);
+   }

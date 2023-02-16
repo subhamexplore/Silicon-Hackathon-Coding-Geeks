@@ -111,26 +111,26 @@ const Donate = ({ cards }) => {
                                     <div className={`${styles.cent}`}>
                                         <Link href={`/issue/${item.slug}`} className={styles.linkcard}>
                                             <div className={`${styles.card} card p-3`}>
-                                                <img src={item.img} className={`${styles.cardimgtop} rounded card-img-top`} alt="..." />
+                                                <div className={`${styles.divimg}`}><img src={item.img} className={`${styles.cardimgtop} card-img-top`} alt="..." /></div>
                                                 <div className={`${styles.cardbody} card-body p-2`}>
-                                                    <h5 className="card-title">{item.title}</h5>
-                                                    <div className={`${styles.acardq} d-flex align-items-start`}>By : {item.user}</div>
-                                                    <div className={`${styles.acardq} d-flex align-items-start`}>{`${dayCalc(item.createdAt, item.day)} days left` }</div>
+                                                    <div className={`${styles.titletext} card-title fs-4 fw-bold`}>{item.title}</div>
+                                                    <div className={`d-flex align-items-center`}><span className={`${styles.bycolor}text-secondary me-2`}>By</span> <span className='fs-5 fw-bold'>{item.user}</span></div>
+                                                    <div className={`${styles.days} d-flex align-items-center justify-content-center mb-1`}><span className='text-danger fs-3 mx-1 fw-bolder'>{`${dayCalc(item.createdAt, item.day)} ` }</span><span className='fs-5 text-white'> days left</span></div>
                                                     <div className={`${styles.cardbottom} row d-flex align-items-center justify-content-center`}>
                                                         <div className="col col-4 d-flex align-items-center justify-content-center px-2">
                                                             <div className="skill">
-                                                                <div className={`${styles.outer} d-flex align-items-center justify-content-center`} style={{backgroundImage : `conic-gradient(rgba(202, 17, 63, 0.986) 0deg,rgba(202, 17, 63, 0.986) ${Math.floor((item.amountRaised / item.amount) * 100)*3.6}deg, white ${Math.floor((item.amountRaised / item.amount) * 100)*3.6}deg,white 360deg`}} >
+                                                                <div className={`${styles.outer} d-flex align-items-center justify-content-center`} style={{backgroundImage : `conic-gradient(rgba(202, 17, 63, 0.986) 0deg,rgba(202, 17, 63, 0.986) ${Math.floor((item.amountRaised / item.amount) * 100)*3.6}deg, rgba(245, 245, 245, 0.185) ${Math.floor((item.amountRaised / item.amount) * 100)*3.6}deg,rgba(245, 245, 245, 0.185) 360deg`}} >
                                                                     <div className={`${styles.inner} d-flex align-items-center justify-content-center`}>
-                                                                        <div className={`${styles.number}`}>
-                                                                            {Math.floor((item.amountRaised / item.amount) * 100)}
+                                                                        <div className={`${styles.number} text-black`}>
+                                                                            {Math.floor((item.amountRaised / item.amount) * 100)}%
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="col col-8">'
-                                                            <div>Raised:</div>
-                                                            <div><span className="fs-4 fw-bold"><span>&#8377;</span><span>{item.amountRaised}</span></span></div>
+                                                        <div className="col col-8 text-align-left">
+                                                            <div>Raised</div>
+                                                            <div><span className="fs-4 fw-bold text-success"><span>&#8377;</span><span>{item.amountRaised}</span></span></div>
                                                         </div>
                                                     </div>
                                                 </div>
