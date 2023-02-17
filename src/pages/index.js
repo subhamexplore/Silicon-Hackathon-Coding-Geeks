@@ -16,7 +16,7 @@ import {FaBuilding} from 'react-icons/fa'
 import axios from 'axios'
 
 export default function Home({cards,allUserDetails}) {
-  console.log(allUserDetails);
+  console.log(allUserDetails)
   return (
     <>
       <Head>
@@ -141,7 +141,7 @@ export default function Home({cards,allUserDetails}) {
               <div className={`${styles.abhi}`}>
                 <div className={`${styles.img1}`}></div>
                 <div className={`${styles.about}`}>
-                  <h3>Abhijeet Sahu</h3>
+                  <h3 className='fw-bold'>Abhijeet Sahu</h3>
                   <p className={`${styles.work}`}>Front-end Developer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Fundraising is the gentle art of teaching the joy of giving."</p>
                 </div>
@@ -150,7 +150,7 @@ export default function Home({cards,allUserDetails}) {
             <div className={`${styles.dev0}`}>
               <div className={`${styles.dev}`}>
                 <div className={`${styles.aboutt}`}>
-                  <h3>Dev Ashrit Behera</h3>
+                  <h3 className='fw-bold'>Dev Ashrit Behera</h3>
                   <p className={`${styles.work}`}>Full Stack Developer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Alone we can do so little, together we can do so much."</p>
                 </div>
@@ -162,7 +162,7 @@ export default function Home({cards,allUserDetails}) {
                 <div className={`${styles.img3}`}></div>
 
                 <div className={`${styles.about}`}>
-                  <h3>Paras Singh Bhatia</h3>
+                  <h3 className='fw-bold'>Paras Singh Bhatia</h3>
                   <p className={`${styles.work}`}>Back-end Developer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Buckle up if you want to bring change to the world."</p>
                 </div>
@@ -171,7 +171,7 @@ export default function Home({cards,allUserDetails}) {
             <div className={`${styles.om0}`}>
               <div className={`${styles.om}`}>
                 <div className={`${styles.aboutt}`}>
-                  <h3>Subham Parida</h3>
+                  <h3 className='fw-bold'>Subham Parida</h3>
                   <p className={`${styles.work}`}>Frontend Developer, Designer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Not all of us can do great things, but we can do small things with great love."</p>
                 </div>
@@ -343,7 +343,7 @@ export async function getServerSideProps(context) {
   const data2 = await response2.json();
   const alluserdetails = data2.uzzer;
   const filteralluserdetails = alluserdetails.filter((item)=> {
-      return (item.NGOname!="")
+      return item.NGOname
   });
   return {
       props: { cards: allCards, allUserDetails : filteralluserdetails }, 
