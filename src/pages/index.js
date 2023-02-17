@@ -181,67 +181,36 @@ export default function Home({cards,allUserDetails}) {
           </div>
         </section>
 
-        <section className="NGO">
+        <section className="NGO"><br /><br />
+          <h2 className={`${styles.ngoa}`}>NGO's Accociated With Us</h2>
           <Carousel indicators={false} variant="dark" className={`carousel-inner ${styles.subham}`}>
             <Carousel.Item interval={3000}>
               <div className={`row ${styles.rowOfNgo}`}>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo1.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>CRY (Child Rights and You)</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo2.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Smile Foundation</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo3.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Goonj</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo4.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item interval={3000}>
-              <div className={`row ${styles.rowOfNgo}`}>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Care India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
@@ -250,30 +219,62 @@ export default function Home({cards,allUserDetails}) {
             <Carousel.Item interval={3000}>
               <div className={`row ${styles.rowOfNgo}`}>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo5.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Helpage India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo6.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Save the Children India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo7.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Oxfam India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo8.png" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>WWF</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item interval={3000}>
+              <div className={`row ${styles.rowOfNgo}`}>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./go9.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Free The Slave</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./ngo10.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>One Drop</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./ngo11.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Human Appeal</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./ngo12.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Doctors Of The World</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
@@ -283,7 +284,7 @@ export default function Home({cards,allUserDetails}) {
         </section>
 
         <section className="WHY">
-          <div className={`${styles.h}`}><h1><span>Why </span><span className={`${styles.usss}`}>Us</span></h1></div>
+          <div className={`${styles.h}`}><h1><span>Why </span><span className={`${styles.usss}`}>Us ?</span></h1></div>
           <br /><br />
           <div className={`row ${styles.one} space`}>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
