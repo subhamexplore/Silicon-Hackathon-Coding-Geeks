@@ -38,7 +38,7 @@ const login = async (req, res) => {
   }
  
   if (await bcrypt.compare(password, oldUser.password)) {
-    const token = jwt.sign({email : oldUser.email, username : oldUser.username,hasNGO:oldUser.hasNGO}, process.env.JWT_SECRET)
+    const token = jwt.sign({email : oldUser.email, username : oldUser.username,hasNGO:oldUser.hasNGO}, "a627efe51a03bfa6e9a43f4d9ba439c11aa3fdf1444d8ca2d166f5e565f5af80464f31d21464fd85a754827f970cbf0d63f490f134b3d5e0a3503385cb2ce545")
     if (res.status(201)) {
       return res.json({ status: 'ok', data: token })
     } else {
@@ -59,7 +59,7 @@ const updateLogin=async(req,res)=>{
         new:true,
         runValidator:true,
       });
-      const token = jwt.sign({email : uzzer.email, username : uzzer.username,hasNGO:uzzer.hasNGO}, process.env.JWT_SECRET)
+      const token = jwt.sign({email : uzzer.email, username : uzzer.username,hasNGO:uzzer.hasNGO}, "a627efe51a03bfa6e9a43f4d9ba439c11aa3fdf1444d8ca2d166f5e565f5af80464f31d21464fd85a754827f970cbf0d63f490f134b3d5e0a3503385cb2ce545")
       res.json({status:"ok",uzzer:uzzer,info:token});
     } catch (error) {
       console.log(error)
