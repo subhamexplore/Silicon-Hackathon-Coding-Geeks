@@ -24,7 +24,7 @@
     font-size: smaller;
 }
 
-.i{
+.i1, .i2, .i3, .i4{
     color: rgb(255, 238, 169)
 }
 
@@ -58,7 +58,19 @@
 .join:hover{
     background-color: rgb(168, 4, 45);
 } 
-.i:hover{
-    color  : rgb(254, 2, 65);
+.i1:hover{
+    color  : rgb(42, 101, 198);
+    cursor: pointer;
+}
+.i2:hover{
+    color  : rgb(187, 42, 198);
+    cursor: pointer;
+}
+.i3:hover{
+    color  : rgb(57, 119, 220);
+    cursor: pointer;
+}
+.i4:hover{
+    color  : rgb(255, 12, 12);
     cursor: pointer;
 }

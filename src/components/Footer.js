@@ -55,10 +55,10 @@ const Footer = () => {
           </div >
         </div >
         <div className="logos">
-          <Link href="https://www.facebook.com/"><BsFacebook className={`fs-2 mx-3 ${styles.i}`}></BsFacebook></Link>
-          <Link href="https://www.instagram.com/"><BsInstagram className={`fs-2 mx-3 ${styles.i}`}></BsInstagram></Link>
-          <Link href="https://www.youtube.com/"><BsTwitter className={`fs-2 mx-3 ${styles.i}`}></BsTwitter></Link>
-          <Link href="https://www.twitter.com/"><BsYoutube className={`fs-2 mx-3 ${styles.i}`}></BsYoutube></Link>
+          <Link href="https://www.facebook.com/"><BsFacebook className={`fs-2 mx-3 ${styles.i1}`}></BsFacebook></Link>
+          <Link href="https://www.instagram.com/"><BsInstagram className={`fs-2 mx-3 ${styles.i2}`}></BsInstagram></Link>
+          <Link href="https://www.youtube.com/"><BsTwitter className={`fs-2 mx-3 ${styles.i3}`}></BsTwitter></Link>
+          <Link href="https://www.twitter.com/"><BsYoutube className={`fs-2 mx-3 ${styles.i4}`}></BsYoutube></Link>
         </div><br/>
         <hr/>
         <div className={styles.lastt}>
